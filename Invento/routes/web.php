@@ -30,6 +30,8 @@ Route::controller(AdminController::class)->group(Function(){
     Route::get('/admin/profile','Profile')->name('admin.profile');
 
     Route::get('/edit/profile','EditProfile')->name('edit.profile');
+
+    Route::post('/store/profile','StoreProfile')->name('store.profile');
 });
 
 
