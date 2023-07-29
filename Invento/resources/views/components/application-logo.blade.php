@@ -1,1 +1,1 @@
-<img src="{{ asset('logo/inverto.svg') }}" width="100px">
+<img src="{{ asset('backend/assets/images/logo-dark.svg') }}" width="100px">
