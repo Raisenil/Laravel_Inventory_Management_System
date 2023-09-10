@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\Home\HomeSlideController;
+use App\Http\Controllers\Home\HomeSliderController;
 
 /*
 |--------------------------------------------------------------------------
