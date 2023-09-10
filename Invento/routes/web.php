@@ -43,6 +43,7 @@ Route::controller(AdminController::class)->group(Function(){
 // Home Slide All route
 Route::controller(HomeSliderController::class)->group(Function(){
     Route::get('/home/slide','HomeSlider')->name('home.slide');
+    Route::post('/update/slide','UpdateSlider')->name('update.slider');
 });
 
 
