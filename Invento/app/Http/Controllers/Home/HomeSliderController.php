@@ -17,7 +17,8 @@ class HomeSliderController extends Controller
         $slide_id = $request->id;
 
         if($request->file('home_Slide')){
-            
+            $image=$request->file('home_slide');
+            $name_gen=hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
         }
     }
 }
