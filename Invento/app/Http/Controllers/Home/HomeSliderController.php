@@ -38,7 +38,7 @@ class HomeSliderController extends Controller
 
             return redirect()->back()->with($notification);
         }else{
-            HomeSlide::findOrFail($slide_id)->update([
+            HomeSlide::FindOrFail($slide_id)->update([
                 'title'=>$request->title,
                 'short_title'=>$request->short_title,
                 'video_url'=>$request->video_url,

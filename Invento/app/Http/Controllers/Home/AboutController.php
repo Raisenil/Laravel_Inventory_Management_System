@@ -27,26 +27,27 @@ class AboutController extends Controller
             About::FindOrFail($about_id)->update([
                 'title'=>$request->title,
                 'short_title'=>$request->short_title,
-                'video_url'=>$request->video_url,
-                'home_slide'=>$save_url,
+                'short_description'=>$request->short_description,
+                'long_description'=>$request->long_description,
+                'about_image'=>$save_url,
             ]);
 
             $notification=array(
-                'message'=>'Home Slide Updated With Image Successfully',
+                'message'=>'About Page Updated With Image Successfully',
                 'alert-type'=>'success'
             );
 
             return redirect()->back()->with($notification);
         }else{
-            HomeSlide::findOrFail($slide_id)->update([
+            About::FindOrFail($slide_id)->update([
                 'title'=>$request->title,
                 'short_title'=>$request->short_title,
-                'video_url'=>$request->video_url,
-                'home_slide'=>'',
+                'short_description'=>$request->short_description,
+                'long_description'=>$request->long_description,
             ]);
 
             $notification=array(
-                'message'=>'Home Slide Updated Without Image Successfully',
+                'message'=>'About Page Updated Without Image Successfully',
                 'alert-type'=>'success'
             );
 
