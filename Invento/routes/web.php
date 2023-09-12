@@ -19,7 +19,7 @@ use App\Http\Controllers\Home\AboutController;
 
 Route::get('/', function () {
     return view('frontend.index');
-});
+})->name('home');
 
 Route::get('/dashboard', function () {
     return view('admin.index');
@@ -51,6 +51,7 @@ Route::controller(HomeSliderController::class)->group(Function(){
 Route::controller(AboutController::class)->group(Function(){
     Route::get('/about/page','AboutPage')->name('about.page');
     Route::post('/update/about','UpdateAbout')->name('update.about');
+    Route::get('/about','HomeAbout')->name('home.about');
 });
 
 
