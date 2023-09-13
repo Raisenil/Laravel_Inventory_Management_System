@@ -44,8 +44,8 @@
             </div> -->
 
             @php
-            $id = Auth::user()->id;
-            $adminData = App\Models\User::find($id);
+                $id = Auth::user()->id;
+                $adminData = App\Models\User::find($id);
             @endphp
 
             <div class="dropdown d-inline-block user-dropdown">
