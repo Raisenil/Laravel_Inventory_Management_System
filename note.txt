@@ -1,1 +1,4 @@
 {{ asset('backend/') }}
+
+1.change active status of navbar in frontend
+2.how to make website go to login page if the user id is null
