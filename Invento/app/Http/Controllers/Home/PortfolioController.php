@@ -110,4 +110,9 @@ class PortfolioController extends Controller
 
         return redirect()->back()->with($notification);
     }
+
+    public function PortfolioDetails($id){
+        $portfolio = Portfolio::FindOrFail($id);
+        return view('frontend.portfolio_details',compact('portfolio'));
+    }
 }
