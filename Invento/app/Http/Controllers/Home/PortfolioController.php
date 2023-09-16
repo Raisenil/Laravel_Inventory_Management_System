@@ -95,4 +95,19 @@ class PortfolioController extends Controller
             return redirect()->route('all.portfolio')->with($notification);
         }
     }
+
+    public function DeletePortfolio($id){
+        $portfolio = Portfolio::FindOrFail($id);
+        $img = $portfolio->portfolio_image;
+        unlink($img);
+
+        Portfolio::FindOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Portfolio Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+    }
 }
