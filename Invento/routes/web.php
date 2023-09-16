@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\AboutController;
+use App\Http\Controllers\Home\PortfolioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +22,21 @@ Route::get('/', function () {
     return view('frontend.index');
 })->name('home');
 
+
 Route::get('/dashboard', function () {
     return view('admin.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
+
+
 
 // Admin All route
 Route::controller(AdminController::class)->group(Function(){
@@ -62,12 +75,10 @@ Route::controller(AboutController::class)->group(Function(){
     Route::get('/delete/multi/image/{id}','DeleteMultiImage')->name('delete.multi.image');
 });
 
-
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// Portfolio All route
+Route::controller(PortfolioController::class)->group(Function(){
+    Route::get('/all/portfolio','AllPortfolio')->name('all.portfolio');
+    Route::get('/add/portfolio','AddPortfolio')->name('add.portfolio');
+    Route::post('/store/portfolio','StorePortfolio')->name('store.portfolio');
 });
 
-require __DIR__.'/auth.php';
