@@ -94,4 +94,7 @@ Route::controller(PortfolioController::class)->group(Function(){
 // Blog Category All route
 Route::controller(BlogCategoryController::class)->group(Function(){
     Route::get('/all/blog/category','AllBlogCategory')->name('all.blog.category');
+    Route::get('/add/blog/category','AddBlogCategory')->name('add.blog.category');
+
+    Route::post('/store/blog/category','StoreBlogCategory')->name('store.blog.category');
 });
