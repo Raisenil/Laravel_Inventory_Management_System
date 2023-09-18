@@ -19,7 +19,7 @@
 
                             <li class="menu-title">Pages</li>
 
-                             <li>
+                            <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
                                     <i class="ri-layout-3-line"></i>
                                     <span>Home Slide Setup</span>
@@ -52,6 +52,16 @@
                                 </ul>
                             </li>
 
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="ri-layout-3-line"></i>
+                                    <span>Blog Category</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{route('all.blog.category')}}">All Blog</a></li>
+                                    <li><a href="{{route('add.portfolio')}}">Add Blog</a></li>
+                                </ul>
+                            </li>
 
 
 
