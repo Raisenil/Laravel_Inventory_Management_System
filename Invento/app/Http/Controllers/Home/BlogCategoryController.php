@@ -56,4 +56,15 @@ class BlogCategoryController extends Controller
 
         return redirect()->route('all.blog.category')->with($notification);
     }
+
+    public function DeleteBlogCategory($id){
+        BlogCategory::FindOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Blog Category Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+    }
 }
