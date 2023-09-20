@@ -37,4 +37,23 @@ class BlogCategoryController extends Controller
 
         return redirect()->route('all.blog.category')->with($notification);
     }
+
+    public function EditBlogCategory($id){
+        $blogcategory = BlogCategory::FindOrFail($id);
+        return view('admin.blog_category.blog_category_edit',compact('blogcategory'));
+    }
+
+    public function UpdateBlogCategory(Request $request,$id){
+        BlogCategory::FindOrFail($id)->update([
+            'blog_category'=>$request->blog_category,
+            'created_at'=> Carbon::now(),
+        ]);
+
+        $notification=array(
+            'message'=>'Blog Category Updated Successfully',
+            'alert-type'=>'success'
+        );
+
+        return redirect()->route('all.blog.category')->with($notification);
+    }
 }
