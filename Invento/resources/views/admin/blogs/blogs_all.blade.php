@@ -39,12 +39,12 @@
                             @foreach($blogs as $item)
                             <tr>
                                 <td>{{( $i++ )}}</td>
-                                <td>{{( $item->blog_category_id )}}</td>
+                                <td>{{( $item['category']['blog_category'] )}}</td>
                                 <td>{{( $item->blog_title )}}</td>
                                 <td>{{( $item->blog_tags )}}</td>
                                 <td><img src="{{ asset($item->blog_image) }}" style="width: 60px; height: 50px;"></td>
                                 <td>
-                                    <a href="{{ route('edit.portfolio',$item->id) }}" class="btn btn-info sm" title="Edit Data"><i class="fas fa-edit"></i></a>
+                                    <a href="{{ route('edit.blog',$item->id) }}" class="btn btn-info sm" title="Edit Data"><i class="fas fa-edit"></i></a>
 
                                     <a href="{{ route('delete.portfolio',$item->id) }}" class="btn btn-danger sm" title="Delete Data" id="delete"><i class="fas fa-trash"></i></a>
                                 </td>
