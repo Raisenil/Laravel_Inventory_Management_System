@@ -115,4 +115,6 @@ Route::controller(BlogController::class)->group(Function(){
     Route::post('/update/blog/{id}','UpdateBlog')->name('update.blog');
 
     Route::get('/delete/blog/{id}','DeleteBlog')->name('delete.blog');
+
+    Route::get('/blog/details/{id}','BlogDetails')->name('blog.details');
 });
