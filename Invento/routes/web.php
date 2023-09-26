@@ -9,6 +9,7 @@ use App\Http\Controllers\Home\PortfolioController;
 use App\Http\Controllers\Home\BlogCategoryController;
 use App\Http\Controllers\Home\BlogController;
 use App\Http\Controllers\Home\FooterController;
+use App\Http\Controllers\Home\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -129,4 +130,9 @@ Route::controller(FooterController::class)->group(Function(){
     Route::get('/footer/setup','FooterSetup')->name('footer.setup');
 
     Route::post('/update/footer/','UpdateFooter')->name('update.footer');
+});
+
+Route::controller(ContactController::class)->group(Function(){
+    Route::get('/contact','Contact')->name('contact.me');
+    Route::post('/store','StoreMessage')->name('store.message');
 });
