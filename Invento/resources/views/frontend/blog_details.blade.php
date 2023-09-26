@@ -56,7 +56,12 @@
                             <ul class="blog__details__tag">
                                 <li class="title">Tag:</li>
                                 <li class="tags-list">
-                                    <a href="#">{{$blogs->blog_tags}}</a>
+                                    <!-- <a href="#">{{$blogs->blog_tags}}</a> -->
+                                    
+                                    @foreach (explode(',', $blogs->blog_tags) as $tag)
+                                    <a href="#">{{ trim($tag) }}</a>
+                                    @endforeach
+
                                 </li>
                             </ul>
                             <ul class="blog__details__social">
@@ -224,7 +229,7 @@
                             <h4 class="widget-title">Categories</h4>
                             <ul class="sidebar__cat">
                                 @foreach($categories as $cat)
-                                <li class="sidebar__cat__item"><a href="blog.html">{{ $cat->blog_category }}</a></li>
+                                <li class="sidebar__cat__item"><a href="{{ route('category.blog',$cat->id)}}">{{ $cat->blog_category }}</a></li>
                                 @endforeach
                             </ul>
                         </div>
