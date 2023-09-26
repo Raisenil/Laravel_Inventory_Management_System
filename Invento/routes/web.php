@@ -135,4 +135,10 @@ Route::controller(FooterController::class)->group(Function(){
 Route::controller(ContactController::class)->group(Function(){
     Route::get('/contact','Contact')->name('contact.me');
     Route::post('/store','StoreMessage')->name('store.message');
+
+    Route::get('/contact/message','ContactMessage')->name('contact.message');
+
+    Route::get('/show/message/{id}','ShowMessage')->name('show.message');
+
+    Route::get('/delete/message/{id}','DeleteMessage')->name('delete.message');
 });
