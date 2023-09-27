@@ -1,3 +1,14 @@
+@php
+    $user = Auth::user();
+
+    if ($user !== null) {
+        $id = $user->id;
+        $adminData = App\Models\User::find($id);
+    } else {
+        dd('No authenticated user.');
+    }
+@endphp
+
 <header id="page-topbar">
     <div class="navbar-header">
         <div class="d-flex">
@@ -42,11 +53,6 @@
                     <i class="ri-fullscreen-line"></i>
                 </button>
             </div> -->
-
-            @php
-                $id = Auth::user()->id;
-                $adminData = App\Models\User::find($id);
-            @endphp
 
             <div class="dropdown d-inline-block user-dropdown">
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
