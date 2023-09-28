@@ -41,20 +41,21 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 
-
 // Admin All route
-Route::controller(AdminController::class)->group(Function(){
-    Route::get('/admin/logout','destroy')->name('admin.logout');
+Route::middleware(['auth'])->group(function () {
+    Route::controller(AdminController::class)->group(Function(){
+        Route::get('/admin/logout','destroy')->name('admin.logout');
 
-    Route::get('/admin/profile','Profile')->name('admin.profile');
+        Route::get('/admin/profile','Profile')->name('admin.profile');
 
-    Route::get('/edit/profile','EditProfile')->name('edit.profile');
+        Route::get('/edit/profile','EditProfile')->name('edit.profile');
 
-    Route::post('/store/profile','StoreProfile')->name('store.profile');
+        Route::post('/store/profile','StoreProfile')->name('store.profile');
 
-    Route::get('/change/password','ChangePassword')->name('change.password');
+        Route::get('/change/password','ChangePassword')->name('change.password');
 
-    Route::post('/update/password','UpdatePassword')->name('update.password');
+        Route::post('/update/password','UpdatePassword')->name('update.password');
+    });
 });
 
 
@@ -78,6 +79,7 @@ Route::controller(AboutController::class)->group(Function(){
     Route::post('/update/multi/image','UpdateMultiImage')->name('update.multi.image');
     Route::get('/delete/multi/image/{id}','DeleteMultiImage')->name('delete.multi.image');
 });
+
 
 // Portfolio All route
 Route::controller(PortfolioController::class)->group(Function(){

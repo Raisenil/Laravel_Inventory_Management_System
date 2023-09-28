@@ -150,8 +150,10 @@
 
         <!-- Sweet alert cdn -->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
         <script src="{{ asset('backend/assets/js/code.js') }}"></script>
+
+        <!-- Validation js -->
+        <script src="{{ asset('backend/assets/js/validate.min.js') }}"></script>
 
         <!-- tags input cdn -->
         <script src="https://cdn.jsdelivr.net/bootstrap.tagsinput/0.8.0/bootstrap-tagsinput.min.js" ></script>
