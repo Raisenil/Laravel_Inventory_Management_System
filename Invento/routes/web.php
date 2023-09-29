@@ -10,6 +10,7 @@ use App\Http\Controllers\Home\BlogCategoryController;
 use App\Http\Controllers\Home\BlogController;
 use App\Http\Controllers\Home\FooterController;
 use App\Http\Controllers\Home\ContactController;
+use App\Http\Controllers\Pos\SupplierController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,6 +58,9 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/update/password','UpdatePassword')->name('update.password');
     });
 });
+
+
+// Frontend Page Layout and Content section-----------------------------------------------------------------------------------------------------------------------
 
 
 // Home Slide All route
@@ -145,4 +149,12 @@ Route::controller(ContactController::class)->group(Function(){
     Route::get('/show/message/{id}','ShowMessage')->name('show.message');
 
     Route::get('/delete/message/{id}','DeleteMessage')->name('delete.message');
+});
+
+
+// Backend Inventory Management System section-----------------------------------------------------------------------------------------------------------------------
+
+Route::controller(SupplierController::class)->group(Function(){
+    Route::get('/supplier/all','SupplierAll')->name('supplier.all');
+    Route::get('/supplier/add','SupplierAdd')->name('supplier.add');
 });
