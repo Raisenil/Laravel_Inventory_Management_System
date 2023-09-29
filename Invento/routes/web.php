@@ -157,4 +157,5 @@ Route::controller(ContactController::class)->group(Function(){
 Route::controller(SupplierController::class)->group(Function(){
     Route::get('/supplier/all','SupplierAll')->name('supplier.all');
     Route::get('/supplier/add','SupplierAdd')->name('supplier.add');
+    Route::post('/supplier/store','SupplierStore')->name('supplier.store');
 });
