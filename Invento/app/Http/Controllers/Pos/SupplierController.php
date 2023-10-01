@@ -37,4 +37,9 @@ class SupplierController extends Controller
 
         return redirect()->route('supplier.all')->with($notification);
     }
+
+    public function SupplierEdit($id){
+        $supplier = Supplier::FindOrFail($id);
+        return view('backend.supplier.supplier_edit',compact('supplier'));
+    }
 }
