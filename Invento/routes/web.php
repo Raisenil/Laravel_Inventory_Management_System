@@ -160,4 +160,5 @@ Route::controller(SupplierController::class)->group(Function(){
     Route::post('/supplier/store','SupplierStore')->name('supplier.store');
 
     Route::get('/supplier/edit/{id}','SupplierEdit')->name('supplier.edit');
+    Route::post('/supplier/update','SupplierUpdate')->name('supplier.update');
 });

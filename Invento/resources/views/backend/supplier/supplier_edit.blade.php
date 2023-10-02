@@ -13,7 +13,7 @@
 
                         <h4 class="card-title">Edit Supplier Page</h4><br>
                         
-                        <form method="post" action="{{ route('supplier.store') }}" id="myForm">
+                        <form method="post" action="{{ route('supplier.update') }}" id="myForm">
                             @csrf
 
                         <input type="hidden" name="id" value="{{$supplier->id}}">
