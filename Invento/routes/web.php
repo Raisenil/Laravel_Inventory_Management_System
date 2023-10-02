@@ -161,4 +161,6 @@ Route::controller(SupplierController::class)->group(Function(){
 
     Route::get('/supplier/edit/{id}','SupplierEdit')->name('supplier.edit');
     Route::post('/supplier/update','SupplierUpdate')->name('supplier.update');
+
+    Route::get('/delete/supplier/{id}','DeleteSupplier')->name('supplier.delete');
 });
