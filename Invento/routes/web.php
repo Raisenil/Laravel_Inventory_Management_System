@@ -11,6 +11,7 @@ use App\Http\Controllers\Home\BlogController;
 use App\Http\Controllers\Home\FooterController;
 use App\Http\Controllers\Home\ContactController;
 use App\Http\Controllers\Pos\SupplierController;
+use App\Http\Controllers\Pos\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -154,6 +155,7 @@ Route::controller(ContactController::class)->group(Function(){
 
 // Backend Inventory Management System section-----------------------------------------------------------------------------------------------------------------------
 
+// Suppliers All route
 Route::controller(SupplierController::class)->group(Function(){
     Route::get('/supplier/all','SupplierAll')->name('supplier.all');
     Route::get('/supplier/add','SupplierAdd')->name('supplier.add');
@@ -163,4 +165,17 @@ Route::controller(SupplierController::class)->group(Function(){
     Route::post('/supplier/update','SupplierUpdate')->name('supplier.update');
 
     Route::get('/delete/supplier/{id}','DeleteSupplier')->name('supplier.delete');
+});
+
+
+//Customers All route
+Route::controller(CustomerController::class)->group(Function(){
+    Route::get('/customer/all','CustomerAll')->name('customer.all');
+    Route::get('/customer/add','CustomerAdd')->name('customer.add');
+    Route::post('/customer/store','CustomerStore')->name('customer.store');
+
+    // Route::get('/supplier/edit/{id}','SupplierEdit')->name('supplier.edit');
+    // Route::post('/supplier/update','SupplierUpdate')->name('supplier.update');
+
+    // Route::get('/delete/supplier/{id}','DeleteSupplier')->name('supplier.delete');
 });
