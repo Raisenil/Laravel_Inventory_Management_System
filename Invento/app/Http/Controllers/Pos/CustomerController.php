@@ -12,7 +12,6 @@ use Image;
 class CustomerController extends Controller
 {
     public function CustomerAll(){
-        // $suppliers = Supplier:: all();
         $customers = Customer:: latest()->get();
         return view('backend.customer.customer_all',compact('customers'));
     }

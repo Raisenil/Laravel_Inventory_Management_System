@@ -12,6 +12,7 @@ use App\Http\Controllers\Home\FooterController;
 use App\Http\Controllers\Home\ContactController;
 use App\Http\Controllers\Pos\SupplierController;
 use App\Http\Controllers\Pos\CustomerController;
+use App\Http\Controllers\Pos\UnitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -178,4 +179,17 @@ Route::controller(CustomerController::class)->group(Function(){
     Route::post('/customer/update','CustomerUpdate')->name('customer.update');
 
     Route::get('/delete/customer/{id}','DeleteCustomer')->name('customer.delete');
+});
+
+
+// Unit All route
+Route::controller(UnitController::class)->group(Function(){
+    Route::get('/unit/all','UnitAll')->name('unit.all');
+    // Route::get('/supplier/add','SupplierAdd')->name('supplier.add');
+    // Route::post('/supplier/store','SupplierStore')->name('supplier.store');
+
+    // Route::get('/supplier/edit/{id}','SupplierEdit')->name('supplier.edit');
+    // Route::post('/supplier/update','SupplierUpdate')->name('supplier.update');
+
+    // Route::get('/delete/supplier/{id}','DeleteSupplier')->name('supplier.delete');
 });
