@@ -174,8 +174,8 @@ Route::controller(CustomerController::class)->group(Function(){
     Route::get('/customer/add','CustomerAdd')->name('customer.add');
     Route::post('/customer/store','CustomerStore')->name('customer.store');
 
-    // Route::get('/supplier/edit/{id}','SupplierEdit')->name('supplier.edit');
-    // Route::post('/supplier/update','SupplierUpdate')->name('supplier.update');
+    Route::get('/customer/edit/{id}','CustomerEdit')->name('customer.edit');
+    Route::post('/customer/update','CustomerUpdate')->name('customer.update');
 
-    // Route::get('/delete/supplier/{id}','DeleteSupplier')->name('supplier.delete');
+    Route::get('/delete/customer/{id}','DeleteCustomer')->name('customer.delete');
 });
