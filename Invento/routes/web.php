@@ -188,8 +188,8 @@ Route::controller(UnitController::class)->group(Function(){
     Route::get('/unit/add','UnitAdd')->name('unit.add');
     Route::post('/unit/store','UnitStore')->name('unit.store');
 
-    // Route::get('/supplier/edit/{id}','SupplierEdit')->name('supplier.edit');
-    // Route::post('/supplier/update','SupplierUpdate')->name('supplier.update');
+    Route::get('/unit/edit/{id}','UnitEdit')->name('unit.edit');
+    Route::post('/unit/update','unitUpdate')->name('unit.update');
 
-    // Route::get('/delete/supplier/{id}','DeleteSupplier')->name('supplier.delete');
+    Route::get('/delete/unit/{id}','DeleteUnit')->name('unit.delete');
 });

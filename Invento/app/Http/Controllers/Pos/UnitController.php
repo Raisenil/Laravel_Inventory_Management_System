@@ -33,4 +33,36 @@ class UnitController extends Controller
 
         return redirect()->route('unit.all')->with($notification);
     }
+
+    public function UnitEdit($id){
+        $unit = Unit::FindOrFail($id);
+        return view('backend.unit.unit_edit',compact('unit'));
+    }
+
+    public function UnitUpdate(Request $request){
+        $unit_id=$request->id;
+        Unit::FindOrFail($unit_id)->update([
+            'name'=>$request->name,
+            'updated_by'=>Auth::user()->id,
+            'updated_at'=>Carbon::now(),
+        ]);
+
+        $notification=array(
+            'message'=>'Unit Updated Successfully',
+            'alert-type'=>'success'
+        );
+
+        return redirect()->route('unit.all')->with($notification);
+    }
+
+    public function DeleteUnit($id){
+        Unit::FindOrFail($id)->delete();
+        
+        $notification = array(
+            'message' => 'Unit Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+    }
 }
