@@ -13,6 +13,7 @@ use App\Http\Controllers\Home\ContactController;
 use App\Http\Controllers\Pos\SupplierController;
 use App\Http\Controllers\Pos\CustomerController;
 use App\Http\Controllers\Pos\UnitController;
+use App\Http\Controllers\Pos\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -192,4 +193,16 @@ Route::controller(UnitController::class)->group(Function(){
     Route::post('/unit/update','unitUpdate')->name('unit.update');
 
     Route::get('/delete/unit/{id}','DeleteUnit')->name('unit.delete');
+});
+
+// Category All route
+Route::controller(CategoryController::class)->group(Function(){
+    Route::get('/category/all','CategoryAll')->name('category.all');
+    Route::get('/category/add','CategoryAdd')->name('category.add');
+    Route::post('/category/store','CategoryStore')->name('category.store');
+
+    Route::get('/category/edit/{id}','CategoryEdit')->name('category.edit');
+    Route::post('/category/update','CategoryUpdate')->name('category.update');
+
+    Route::get('/delete/category/{id}','DeleteCategory')->name('category.delete');
 });
