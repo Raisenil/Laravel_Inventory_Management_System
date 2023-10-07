@@ -14,6 +14,7 @@ use App\Http\Controllers\Pos\SupplierController;
 use App\Http\Controllers\Pos\CustomerController;
 use App\Http\Controllers\Pos\UnitController;
 use App\Http\Controllers\Pos\CategoryController;
+use App\Http\Controllers\Pos\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -205,4 +206,16 @@ Route::controller(CategoryController::class)->group(Function(){
     Route::post('/category/update','CategoryUpdate')->name('category.update');
 
     Route::get('/delete/category/{id}','DeleteCategory')->name('category.delete');
+});
+
+// Products All route
+Route::controller(ProductController::class)->group(Function(){
+    Route::get('/product/all','ProductAll')->name('product.all');
+    Route::get('/product/add','ProductAdd')->name('product.add');
+    Route::post('/product/store','ProductStore')->name('product.store');
+
+    Route::get('/product/edit/{id}','ProductEdit')->name('product.edit');
+    // Route::post('/category/update','CategoryUpdate')->name('category.update');
+
+    // Route::get('/delete/category/{id}','DeleteCategory')->name('category.delete');
 });
