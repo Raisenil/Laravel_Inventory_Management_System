@@ -215,7 +215,7 @@ Route::controller(ProductController::class)->group(Function(){
     Route::post('/product/store','ProductStore')->name('product.store');
 
     Route::get('/product/edit/{id}','ProductEdit')->name('product.edit');
-    // Route::post('/category/update','CategoryUpdate')->name('category.update');
+    Route::post('/product/update','ProductUpdate')->name('product.update');
 
-    // Route::get('/delete/category/{id}','DeleteCategory')->name('category.delete');
+    Route::get('/delete/product/{id}','DeleteProduct')->name('product.delete');
 });

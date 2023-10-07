@@ -11,16 +11,17 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="card-title">Add Product Page</h4><br>
+                        <h4 class="card-title">Edit Product Page</h4><br>
                         
-                        <form method="post" action="{{ route('product.store') }}" id="myForm">
+                        <form method="post" action="{{ route('product.update') }}" id="myForm">
                             @csrf
 
+                        <input type="hidden" name="id" value="{{$product->id}}">
 
                         <div class="row mb-3 mt-3">
                             <label for="example-text-input" class="col-sm-2 col-form-label">Product Name</label>
                             <div class="form-group col-sm-10">
-                                <input name="name" class="form-control" type="text" value="" >
+                                <input name="name" class="form-control" type="text" value="{{$product->name}}" >
                             </div>
                         </div>
                         <!-- end row -->
@@ -31,7 +32,7 @@
                                 <select name="supplier_id" class="form-select" aria-label="Default select example">
                                     <option selected="">Open this select menu</option>
                                     @foreach($supplier as $supp)
-                                    <option value="{{$supp->id}}">{{$supp->name}}</option>
+                                    <option value="{{$supp->id}}"{{$supp->id == $product->supplier_id ? 'selected' : ''}}>{{$supp->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -44,7 +45,7 @@
                                 <select name="unit_id" class="form-select" aria-label="Default select example">
                                     <option selected="">Open this select menu</option>
                                     @foreach($unit as $uni)
-                                    <option value="{{$uni->id}}">{{$uni->name}}</option>
+                                    <option value="{{$uni->id}}"{{$uni->id == $product->unit_id ? 'selected' : ''}}>{{$uni->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -57,14 +58,14 @@
                                 <select name="category_id" class="form-select" aria-label="Default select example">
                                     <option selected="">Open this select menu</option>
                                     @foreach($category as $cat)
-                                    <option value="{{$cat->id}}">{{$cat->name}}</option>
+                                    <option value="{{$cat->id}}"{{$cat->id == $product->category_id ? 'selected' : ''}}>{{$cat->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
                         </div>
                         <!-- end row -->
 
-                        <input type="submit" class="btn btn-info waves-effect waves-light" value="Add Product">
+                        <input type="submit" class="btn btn-info waves-effect waves-light" value="Update Product">
 
                         </form>
 
