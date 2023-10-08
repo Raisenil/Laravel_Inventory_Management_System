@@ -15,6 +15,7 @@ use App\Http\Controllers\Pos\CustomerController;
 use App\Http\Controllers\Pos\UnitController;
 use App\Http\Controllers\Pos\CategoryController;
 use App\Http\Controllers\Pos\ProductController;
+use App\Http\Controllers\Pos\PurchaseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -218,4 +219,17 @@ Route::controller(ProductController::class)->group(Function(){
     Route::post('/product/update','ProductUpdate')->name('product.update');
 
     Route::get('/delete/product/{id}','DeleteProduct')->name('product.delete');
+});
+
+
+// Purchase All route
+Route::controller(PurchaseController::class)->group(Function(){
+    Route::get('/purchase/all','PurchaseAll')->name('purchase.all');
+    Route::get('/purchase/add','PurchaseAdd')->name('purchase.add');
+    // Route::post('/product/store','ProductStore')->name('product.store');
+
+    // Route::get('/product/edit/{id}','ProductEdit')->name('product.edit');
+    // Route::post('/product/update','ProductUpdate')->name('product.update');
+
+    // Route::get('/delete/product/{id}','DeleteProduct')->name('product.delete');
 });

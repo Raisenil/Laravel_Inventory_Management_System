@@ -65,6 +65,16 @@
                                 </ul>
                             </li>
 
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class=" ri-money-dollar-circle-fill"></i>
+                                    <span>Manage Purchase</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{route('purchase.all')}}">All Purchases</a></li>
+                                </ul>
+                            </li>
+
 
                             <!-- Page Layout Start -->
                             <li class="menu-title">Pages</li>
