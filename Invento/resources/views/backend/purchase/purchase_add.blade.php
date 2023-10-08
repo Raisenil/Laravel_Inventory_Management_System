@@ -107,4 +107,45 @@
 
     </div>
 </div>
+
+<script type="text/javascript">
+    $(function(){
+        $(document).on('change','#supplier_id',function(){
+            var supplier_id = $(this).val();
+            $.ajax({
+                url:"{{route('get-category')}}",
+                type:"GET",
+                data:{supplier_id:supplier_id},
+                success:function(data){
+                    var html = '<option value="">Select Category</option>';
+                    $.each(data,function(key,v){
+                        html += '<option value=" '+v.category_id+' ">'+v.category.name+'</option>';
+                    });
+                    $('#category_id').html(html);
+                }
+            })
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $(function(){
+        $(document).on('change','#category_id',function(){
+            var category_id = $(this).val();
+            $.ajax({
+                url:"{{route('get-product')}}",
+                type:"GET",
+                data:{category_id:category_id},
+                success:function(data){
+                    var html = '<option value="">Select Product</option>';
+                    $.each(data,function(key,v){
+                        html += '<option value=" '+v.id+' ">'+v.name+'</option>';
+                    });
+                    $('#product_id').html(html);
+                }
+            })
+        });
+    });
+</script>
+
 @endsection

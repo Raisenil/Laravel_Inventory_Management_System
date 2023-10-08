@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
+
 use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\PortfolioController;
@@ -10,12 +11,14 @@ use App\Http\Controllers\Home\BlogCategoryController;
 use App\Http\Controllers\Home\BlogController;
 use App\Http\Controllers\Home\FooterController;
 use App\Http\Controllers\Home\ContactController;
+
 use App\Http\Controllers\Pos\SupplierController;
 use App\Http\Controllers\Pos\CustomerController;
 use App\Http\Controllers\Pos\UnitController;
 use App\Http\Controllers\Pos\CategoryController;
 use App\Http\Controllers\Pos\ProductController;
 use App\Http\Controllers\Pos\PurchaseController;
+use App\Http\Controllers\Pos\DefaultController;
 
 /*
 |--------------------------------------------------------------------------
@@ -232,4 +235,11 @@ Route::controller(PurchaseController::class)->group(Function(){
     // Route::post('/product/update','ProductUpdate')->name('product.update');
 
     // Route::get('/delete/product/{id}','DeleteProduct')->name('product.delete');
+});
+
+
+// Default All route
+Route::controller(DefaultController::class)->group(Function(){
+    Route::get('/get-category','GetCategory')->name('get-category');
+    Route::get('/get-product','GetProduct')->name('get-product');
 });
