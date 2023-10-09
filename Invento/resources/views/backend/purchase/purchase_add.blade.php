@@ -153,12 +153,12 @@
 
         <td>
             <input type="hidden" name="category_id[]" value="@{{category_id}}">
-            @{{category_name}}
+            @{{ category_name }}
         </td>
 
         <td>
             <input type="hidden" name="product_id[]" value="@{{product_id}}">
-            @{{product_name}}
+            @{{ product_name }}
         </td>
 
         <td>
@@ -170,7 +170,7 @@
         </td>
 
         <td>
-            <input type="text" class="from-control" name="description[]" value="">
+            <input type="text" class="from-control" name="description[]">
         </td>
 
         <td>
@@ -191,14 +191,50 @@
             var purchase_no = $('#purchase_no').val();
             var supplier_id = $('#supplier_id').val();
             var category_id = $('#category_id').val();
-            var category_name = $('#category_name').find('option:selected').text();
+            var category_name = $('#category_id').find('option:selected').text();
             var product_id = $('#product_id').val();
             var product_name = $('#product_id').find('option:selected').text();
 
             // validation check
             if(date == ''){
-                // PM9 12 M
+                $.notify("Date is Required", {globalPosition: 'top right', className:'error'});
+                return false;
             }
+
+            if(purchase_no == ''){
+                $.notify("Purchase No is Required", {globalPosition: 'top right', className:'error'});
+                return false;
+            }
+
+            if(supplier_id == ''){
+                $.notify("Supplier is Required", {globalPosition: 'top right', className:'error'});
+                return false;
+            }
+
+            if(category_id == ''){
+                $.notify("Category is Required", {globalPosition: 'top right', className:'error'});
+                return false;
+            }
+
+            if(product_id == ''){
+                $.notify("Product is Required", {globalPosition: 'top right', className:'error'});
+                return false;
+            }
+
+            var source = $("#document-template").html();
+            var template = Handlebars.compile(source);
+            var data = {
+                date:date,
+                purchase_no:purchase_no,
+                supplier_id:supplier_id,
+                category_id:category_id,
+                category_name:category_name,
+                product_id:product_id,
+                product_name:product_name
+            };
+            var html = template(data);
+            $("#addRow").append(html);
+
         })
     })
 </script>
