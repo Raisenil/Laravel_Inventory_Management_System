@@ -231,10 +231,7 @@ Route::controller(PurchaseController::class)->group(Function(){
     Route::get('/purchase/add','PurchaseAdd')->name('purchase.add');
     Route::post('/purchase/store','PurchaseStore')->name('purchase.store');
 
-    // Route::get('/product/edit/{id}','ProductEdit')->name('product.edit');
-    // Route::post('/product/update','ProductUpdate')->name('product.update');
-
-    // Route::get('/delete/product/{id}','DeleteProduct')->name('product.delete');
+    Route::get('/delete/purchase/{id}','DeletePurchase')->name('purchase.delete');
 });
 
 
