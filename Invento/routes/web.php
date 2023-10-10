@@ -229,7 +229,7 @@ Route::controller(ProductController::class)->group(Function(){
 Route::controller(PurchaseController::class)->group(Function(){
     Route::get('/purchase/all','PurchaseAll')->name('purchase.all');
     Route::get('/purchase/add','PurchaseAdd')->name('purchase.add');
-    // Route::post('/product/store','ProductStore')->name('product.store');
+    Route::post('/purchase/store','PurchaseStore')->name('purchase.store');
 
     // Route::get('/product/edit/{id}','ProductEdit')->name('product.edit');
     // Route::post('/product/update','ProductUpdate')->name('product.update');

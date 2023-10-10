@@ -16,15 +16,15 @@ return new class extends Migration
             $table->integer('supplier_id');
             $table->integer('category_id');
             $table->integer('product_id');
-            $table->integer('purchase_no');
+            $table->string('purchase_no');
             $table->date('date');
             $table->string('description')->nullable();
             $table->double('buying_qty');
-            $table->double('unit_qty');
+            $table->double('unit_price');
             $table->double('buying_price');
             $table->tinyInteger('status')->default('0')->comment('0=Pending,1=Approved');
-            $table->string('created_by')->nullable();
-            $table->string('updated_by')->nullable();
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
         });
     }
