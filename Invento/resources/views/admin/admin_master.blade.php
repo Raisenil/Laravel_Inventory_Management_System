@@ -33,6 +33,9 @@
         <!-- tags input css -->
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap.tagsinput/0.8.0/bootstrap-tagsinput.css" >
 
+        <!-- Select 2 css -->
+        <link href="{{ asset('backend/assets/libs/select2/css/select2.min.css') }}" rel="stylesheet" type="text/css">
+
     </head>
 
     <body data-topbar="dark">
@@ -163,5 +166,9 @@
 
         <!-- notify js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js"></script>
+
+        <!-- Select 2 js -->
+        <script src="{{ asset('backend/assets/libs/select2/js/select2.min.js') }}"></script>
+        <script src="{{ asset('backend/assets/js/pages/form-advanced.init.js') }}"></script>
     </body>
 </html>
