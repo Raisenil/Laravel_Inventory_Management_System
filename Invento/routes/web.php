@@ -232,6 +232,9 @@ Route::controller(PurchaseController::class)->group(Function(){
     Route::post('/purchase/store','PurchaseStore')->name('purchase.store');
 
     Route::get('/delete/purchase/{id}','DeletePurchase')->name('purchase.delete');
+
+    Route::get('/purchase/pending','PurchasePending')->name('purchase.pending');
+    Route::get('/purchase/approve/{id}','PurchaseApprove')->name('purchase.approve');
 });
 
 
