@@ -19,6 +19,7 @@ use App\Http\Controllers\Pos\CategoryController;
 use App\Http\Controllers\Pos\ProductController;
 use App\Http\Controllers\Pos\PurchaseController;
 use App\Http\Controllers\Pos\DefaultController;
+use App\Http\Controllers\Pos\InvoiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -242,4 +243,17 @@ Route::controller(PurchaseController::class)->group(Function(){
 Route::controller(DefaultController::class)->group(Function(){
     Route::get('/get-category','GetCategory')->name('get-category');
     Route::get('/get-product','GetProduct')->name('get-product');
+});
+
+
+// Invoice All route
+Route::controller(InvoiceController::class)->group(Function(){
+    Route::get('/invoice/all','InvoiceAll')->name('invoice.all');
+    // Route::get('/purchase/add','PurchaseAdd')->name('purchase.add');
+    // Route::post('/purchase/store','PurchaseStore')->name('purchase.store');
+
+    // Route::get('/delete/purchase/{id}','DeletePurchase')->name('purchase.delete');
+
+    // Route::get('/purchase/pending','PurchasePending')->name('purchase.pending');
+    // Route::get('/purchase/approve/{id}','PurchaseApprove')->name('purchase.approve');
 });
