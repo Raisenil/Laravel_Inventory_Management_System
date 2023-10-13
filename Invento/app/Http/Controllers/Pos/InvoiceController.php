@@ -20,7 +20,7 @@ use Illuminate\Support\Carbon;
 class InvoiceController extends Controller
 {
     public function InvoiceAll(){
-        // $allData = Purchase::orderBy('date','desc')->orderBy('id','desc')->get();
-        // return view('backend.purchase.purchase_all',compact('allData'));
+        $allData = Invoice::orderBy('date','desc')->orderBy('id','desc')->get();
+        return view('backend.invoice.invoice_all',compact('allData'));
     } 
 }
