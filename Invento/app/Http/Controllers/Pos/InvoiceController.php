@@ -28,6 +28,7 @@ class InvoiceController extends Controller
 
     public function InvoiceAdd(){
         $category=Category::all();
+        $customer=Customer::all();
         $invoice_data=Invoice::orderBy('id','desc')->first();
         if($invoice_data == null){
             $firstReg = '0';
@@ -39,6 +40,6 @@ class InvoiceController extends Controller
 
         date_default_timezone_set('Asia/Dhaka');
         $date = date('Y-m-d');
-        return view('backend.invoice.invoice_add',compact('invoice_no','category','date'));
+        return view('backend.invoice.invoice_add',compact('invoice_no','category','date','customer'));
     }
 }

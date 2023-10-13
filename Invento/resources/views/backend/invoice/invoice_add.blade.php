@@ -135,7 +135,9 @@
                                 <label> Customer Name  </label>
                                     <select name="customer_id" id="customer_id" class="form-select">
                                         <option value="">Select Customer </option>
-
+                                        @foreach($customer as $cust)
+                                        <option value="{{ $cust->id }}">{{ $cust->name }} - {{ $cust->mobile_no }} </option>
+                                        @endforeach
                                         <option value="0">New Customer </option>
                                     </select>
                             </div>
@@ -333,8 +335,9 @@
 
 </script>
 
-{{-- Paid amount For Partial Pay --}}
+
 <script type="text/javascript">
+    // Paid amount For Partial Pay
     $(document).on('change','#paid_status', function(){
         var paid_status = $(this).val();
         if (paid_status == 'partial_paid') {
@@ -344,6 +347,7 @@
         }
     });
 
+    // New Customer View js
     $(document).on('change','#customer_id', function(){
         var customer_id = $(this).val();
         if (customer_id == '0') {
