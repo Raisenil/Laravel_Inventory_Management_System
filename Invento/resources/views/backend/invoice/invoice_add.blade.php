@@ -139,7 +139,9 @@
                                         <option value="0">New Customer </option>
                                     </select>
                             </div>
-                        </div> <!-- // end row --> <br>
+                        </div> <!-- // end row -->
+
+                        <br>
 
                         <!-- Hide Add Customer Form -->
                         <div class="row new_customer" style="display:none">
@@ -331,7 +333,7 @@
 
 </script>
 
-
+{{-- Paid amount For Partial Pay --}}
 <script type="text/javascript">
     $(document).on('change','#paid_status', function(){
         var paid_status = $(this).val();
