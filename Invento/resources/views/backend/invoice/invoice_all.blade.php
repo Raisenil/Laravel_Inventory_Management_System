@@ -19,7 +19,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                    <a href="{{route('purchase.add')}}" class="btn btn-secondary waves-effect waves-light" style="float:right;">Add Invoice</a>
+                    <a href="{{route('invoice.add')}}" class="btn btn-secondary waves-effect waves-light" style="float:right;">Add Invoice</a>
                     <br><br>
 
                         <h4 class="card-title">Invoice All Data</h4><br>
@@ -45,7 +45,6 @@
                                 <td>{{( $item->invoice_no )}}</td>
                                 <td>{{ date('d-m-Y',strtotime($item->date)) }}</td>
                                 <td>{{( $item->description )}}</td>
-                                
 
                                 <td>
                                         <a href="{{route('purchase.delete',$item->id)}}" class="btn btn-danger sm" title="Delete Data" id="delete"><i class="fas fa-trash"></i></a>

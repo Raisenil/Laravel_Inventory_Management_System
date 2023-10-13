@@ -243,13 +243,14 @@ Route::controller(PurchaseController::class)->group(Function(){
 Route::controller(DefaultController::class)->group(Function(){
     Route::get('/get-category','GetCategory')->name('get-category');
     Route::get('/get-product','GetProduct')->name('get-product');
+    Route::get('/check-product-stock','GetStock')->name('check-product-stock');
 });
 
 
 // Invoice All route
 Route::controller(InvoiceController::class)->group(Function(){
     Route::get('/invoice/all','InvoiceAll')->name('invoice.all');
-    // Route::get('/purchase/add','PurchaseAdd')->name('purchase.add');
+    Route::get('/invoice/add','InvoiceAdd')->name('invoice.add');
     // Route::post('/purchase/store','PurchaseStore')->name('purchase.store');
 
     // Route::get('/delete/purchase/{id}','DeletePurchase')->name('purchase.delete');

@@ -55,7 +55,7 @@
 
                                     <label for="example-text-input" class="form-label" style="padding-top: 10px;">Category Name</label>
                                     
-                                    <select name="category_id" id="category_id" class="form-select select2" aria-label="Default select example">
+                                    <select name="category_id" id="category_id" class="form-select select2-selection__rendered" aria-label="Default select example">
                                     <option selected="">Open this select menu</option>
                                     
 
@@ -69,7 +69,7 @@
 
                                     <label for="example-text-input" class="form-label" style="padding-top: 10px;">Product Name</label>
                                     
-                                    <select name="product_id" id="product_id" class="form-select select2" aria-label="Default select example">
+                                    <select name="product_id" id="product_id" class="form-select select2-selection__rendered" aria-label="Default select example">
                                     <option selected="">Open this select menu</option>
                                     
                                     
