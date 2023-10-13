@@ -101,7 +101,6 @@
                                     </td>
                                 </tr>
 
-
                                 <tr>
                                     <td colspan="4"> Grand Total</td>
                                     <td>
@@ -161,7 +160,7 @@
                         <br>
 
                         <div class="form-group">
-                            <button type="submit" class="btn btn-info" id="storeButton"> Invoice Store</button>
+                            <button type="submit" class="btn btn-info" id="storeButton">Add Invoice</button>
 
                         </div>
 
@@ -171,45 +170,38 @@
     </div>
 </div>
 
-
-
-
-
-
+{{-- JS for dynamic Tablble --}}
 <script id="document-template" type="text/x-handlebars-template">
 
-<tr class="delete_add_more_item" id="delete_add_more_item">
-        <input type="hidden" name="date" value="@{{date}}">
-        <input type="hidden" name="invoice_no" value="@{{invoice_no}}">
+    <tr class="delete_add_more_item" id="delete_add_more_item">
+            <input type="hidden" name="date" value="@{{date}}">
+            <input type="hidden" name="invoice_no" value="@{{invoice_no}}">
 
+        <td>
+            <input type="hidden" name="category_id[]" value="@{{category_id}}">
+            @{{ category_name }}
+        </td>
 
-    <td>
-        <input type="hidden" name="category_id[]" value="@{{category_id}}">
-        @{{ category_name }}
-    </td>
+        <td>
+            <input type="hidden" name="product_id[]" value="@{{product_id}}">
+            @{{ product_name }}
+        </td>
 
-    <td>
-        <input type="hidden" name="product_id[]" value="@{{product_id}}">
-        @{{ product_name }}
-    </td>
+        <td>
+            <input type="number" min="1" class="form-control selling_qty text-right" name="selling_qty[]" value="">
+        </td>
 
-    <td>
-        <input type="number" min="1" class="form-control selling_qty text-right" name="selling_qty[]" value="">
-    </td>
+        <td>
+            <input type="number" class="form-control unit_price text-right" name="unit_price[]" value="">
+        </td>
 
-    <td>
-        <input type="number" class="form-control unit_price text-right" name="unit_price[]" value="">
-    </td>
+        <td>
+            <input type="number" class="form-control selling_price text-right" name="selling_price[]" value="0" readonly>
+        </td>
 
-
-
-    <td>
-        <input type="number" class="form-control selling_price text-right" name="selling_price[]" value="0" readonly>
-    </td>
-
-    <td>
-        <i class="btn btn-danger btn-sm fas fa-window-close removeeventmore"></i>
-    </td>
+        <td>
+            <i class="btn btn-danger btn-sm fas fa-window-close removeeventmore"></i>
+        </td>
 
     </tr>
 
@@ -226,7 +218,7 @@
             var product_id = $('#product_id').val();
             var product_name = $('#product_id').find('option:selected').text();
 
-
+            // validation
             if(date == ''){
                 $.notify("Date is Required" ,  {globalPosition: 'top right', className:'error' });
                 return false;
@@ -285,6 +277,7 @@
                 }
             });
 
+            // discount calculation
             var discount_amount = parseFloat($('#discount_amount').val());
             if(!isNaN(discount_amount) && discount_amount.length != 0){
                     sum -= parseFloat(discount_amount);
