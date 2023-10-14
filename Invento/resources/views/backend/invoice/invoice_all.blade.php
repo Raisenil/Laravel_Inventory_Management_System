@@ -13,7 +13,7 @@
             </div>
         </div>
         <!-- end page title -->
-        
+
         <div class="row">
             <div class="col-12">
                 <div class="card">
@@ -32,7 +32,7 @@
                                 <th>Invoice No</th>
                                 <th>Date</th>
                                 <th>Description</th>
-                                <th>Action</th>
+                                <th>Amount</th>
                             </tr>
                             </thead>
 
@@ -41,14 +41,12 @@
                             @foreach($allData as $key =>$item)
                             <tr>
                                 <td>{{( $key+1 )}}</td>
-                                <td>{{( $item['supplier']['name'] )}}</td>
+                                <td>{{( $item['payment']['customer']['name'] )}}</td>
                                 <td>{{( $item->invoice_no )}}</td>
                                 <td>{{ date('d-m-Y',strtotime($item->date)) }}</td>
                                 <td>{{( $item->description )}}</td>
 
-                                <td>
-                                        <a href="{{route('purchase.delete',$item->id)}}" class="btn btn-danger sm" title="Delete Data" id="delete"><i class="fas fa-trash"></i></a>
-                                </td>
+                                <td>$ {{( $item['payment']['total_amount'] )}}</td>
                             </tr>
                             @endforeach
                             </tbody>
@@ -58,7 +56,7 @@
                 </div>
             </div> <!-- end col -->
         </div> <!-- end row -->
-        
+
 
     </div> <!-- container-fluid -->
 </div>

@@ -251,7 +251,7 @@ Route::controller(DefaultController::class)->group(Function(){
 Route::controller(InvoiceController::class)->group(Function(){
     Route::get('/invoice/all','InvoiceAll')->name('invoice.all');
     Route::get('/invoice/add','InvoiceAdd')->name('invoice.add');
-    // Route::post('/purchase/store','PurchaseStore')->name('purchase.store');
+    Route::post('/invoice/store','InvoiceStore')->name('invoice.store');
 
     // Route::get('/delete/purchase/{id}','DeletePurchase')->name('purchase.delete');
 
