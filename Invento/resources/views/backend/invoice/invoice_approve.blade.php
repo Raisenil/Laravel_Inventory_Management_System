@@ -49,7 +49,7 @@
                         </tbody>
                     </table>
 
-                    <form method="post" action="">
+                    <form method="post" action="{{ route('approval.store',$invoice->id) }}">
                         @csrf
                         <table border="1" class="table mb-0" width="100%">
                             <thead>
@@ -70,6 +70,11 @@
 
                                 @foreach($invoice['invoice_details'] as $key => $details)
                                 <tr>
+
+                                    <input type="hidden" name="category_id[]" value="{{ $details->categoy_id }}">
+                                    <input type="hidden" name="product_id[]" value="{{ $details->product_id }}">
+                                    <input type="hidden" name="selling_qty[{{ $details->id }}]" value="{{ $details->selling_qty }}">
+
                                     <td class="text-center">{{ $key+1 }}</td>
                                     <td class="text-center">{{ $details['category']['name'] }}</td>
                                     <td class="text-center">{{ $details['product']['name'] }}</td>
