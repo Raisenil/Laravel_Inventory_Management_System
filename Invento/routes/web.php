@@ -253,6 +253,8 @@ Route::controller(InvoiceController::class)->group(Function(){
     Route::get('/invoice/add','InvoiceAdd')->name('invoice.add');
     Route::post('/invoice/store','InvoiceStore')->name('invoice.store');
 
+    Route::get('/invoice/pending/list','PendingList')->name('invoice.pending');
+
     // Route::get('/delete/purchase/{id}','DeletePurchase')->name('purchase.delete');
 
     // Route::get('/purchase/pending','PurchasePending')->name('purchase.pending');

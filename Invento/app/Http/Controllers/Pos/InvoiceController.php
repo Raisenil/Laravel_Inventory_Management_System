@@ -23,7 +23,7 @@ use DB;
 class InvoiceController extends Controller
 {
     public function InvoiceAll(){
-        $allData = Invoice::orderBy('date','desc')->orderBy('id','desc')->get();
+        $allData = Invoice::orderBy('date','desc')->orderBy('id','desc')->where('status','1')->get();
         return view('backend.invoice.invoice_all',compact('allData'));
     }
 
@@ -129,5 +129,10 @@ class InvoiceController extends Controller
             'alert-type' => 'success'
         );
         return redirect()->route('invoice.all')->with($notification);
+    }
+
+    public function PendingList(){
+        $allData = Invoice::orderBy('date','desc')->orderBy('id','desc')->where('status','0')->get();
+        return view('backend.invoice.invoice_pending',compact('allData'));
     }
 }
