@@ -12,14 +12,14 @@
                     <div class="card-body">
 
                         <h4 class="card-title">Add Purchase</h4><br>
-                        
+
                         <div class="row">
 
                             <div class="col-md-4">
                                 <div class="md-3">
 
                                     <label for="example-text-input" class="form-label" style="padding-top: 10px;">Date</label>
-                                    
+
                                     <input class="form-control" name="date" type="date" id="date">
 
                                 </div>
@@ -29,7 +29,7 @@
                                 <div class="md-3">
 
                                     <label for="example-text-input" class="form-label" style="padding-top: 10px;">Purchase No</label>
-                                    
+
                                     <input class="form-control" name="purchase_no" type="text" id="purchase_no">
 
                                 </div>
@@ -39,7 +39,7 @@
                                 <div class="md-3">
 
                                     <label for="example-text-input" class="form-label" style="padding-top: 10px;">Supplier Name</label>
-                                    
+
                                     <select name="supplier_id" id="supplier_id" class="form-select select2" aria-label="Default select example">
                                     <option selected="">Open this select menu</option>
                                     @foreach($supplier as $supp)
@@ -54,10 +54,10 @@
                                 <div class="md-3">
 
                                     <label for="example-text-input" class="form-label" style="padding-top: 10px;">Category Name</label>
-                                    
-                                    <select name="category_id" id="category_id" class="form-select select2-selection__rendered" aria-label="Default select example">
+
+                                    <select name="category_id" id="category_id" class="form-select select2" aria-label="Default select example">
                                     <option selected="">Open this select menu</option>
-                                    
+
 
                                     </select>
 
@@ -68,11 +68,11 @@
                                 <div class="md-3">
 
                                     <label for="example-text-input" class="form-label" style="padding-top: 10px;">Product Name</label>
-                                    
-                                    <select name="product_id" id="product_id" class="form-select select2-selection__rendered" aria-label="Default select example">
+
+                                    <select name="product_id" id="product_id" class="form-select select2" aria-label="Default select example">
                                     <option selected="">Open this select menu</option>
-                                    
-                                    
+
+
                                     </select>
 
                                 </div>
@@ -109,7 +109,7 @@
                                         <th>Action</th>
                                     </tr>
                                 </thead>
-                                
+
                                 <tbody id="addRow" class="addRow">
 
                                 </tbody>
@@ -145,7 +145,7 @@
 
 <!-- For interactive table -->
 <script id="document-template" type="text/x-handlebars-template">
-    
+
     <tr class="delete_add_more_item" id="delete_add_more_item">
         <input type="hidden" name="date[]" value="@{{date}}">
         <input type="hidden" name="purchase_no[]" value="@{{purchase_no}}">
