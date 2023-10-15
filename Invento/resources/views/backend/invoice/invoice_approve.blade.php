@@ -49,14 +49,15 @@
                         </tbody>
                     </table>
 
-                    <form action="">
+                    <form method="post" action="">
+                        @csrf
                         <table border="1" class="table mb-0" width="100%">
                             <thead>
                                 <tr>
                                     <th class="text-center">SL</th>
                                     <th class="text-center">Category</th>
                                     <th class="text-center">Product Name</th>
-                                    <th class="text-center">Current Stock</th>
+                                    <th class="text-center" style="background-color:#6C757D;color:white">Current Stock</th>
                                     <th class="text-center">Quantity</th>
                                     <th class="text-center">Unit Price</th>
                                     <th class="text-center">Total Price</th>
@@ -72,7 +73,7 @@
                                     <td class="text-center">{{ $key+1 }}</td>
                                     <td class="text-center">{{ $details['category']['name'] }}</td>
                                     <td class="text-center">{{ $details['product']['name'] }}</td>
-                                    <td class="text-center">{{ $details['product']['quantity'] }}</td>
+                                    <td class="text-center" style="background-color:#6C757D;color:white">{{ $details['product']['quantity'] }}</td>
                                     <td class="text-center">{{ $details->selling_qty }}</td>
                                     <td class="text-center">{{ $details->unit_price }}</td>
                                     <td class="text-center">{{ $details->selling_price }}</td>
@@ -85,8 +86,27 @@
                                     <td colspan="6">Sub Total</td>
                                     <td>{{ $total_sum }}</td>
                                 </tr>
+                                <tr>
+                                    <td colspan="6">Discount</td>
+                                    <td>{{ $payment->discount_amount }}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">Paid Amount</td>
+                                    <td>{{ $payment->paid_amount }}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">Due Amount</td>
+                                    <td>{{ $payment->due_amount }}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">Grand Amount</td>
+                                    <td>{{ $payment->total_amount }}</td>
+                                </tr>
                             </tbody>
                         </table>
+                        <br>
+
+                        <button type="submit" class="btn btn-info">Invoice Approve</button>
                     </form>
 
                     </div>
