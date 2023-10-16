@@ -159,6 +159,7 @@ class InvoiceController extends Controller
         foreach($request->selling_qty as $key => $val){
             $invoice_details = InvoiceDetail::where('id',$key)->first();
             $product = Product::where('id',$invoice_details->product_id)->first();
+
             if($product->quantity < $request->selling_qty[$key]){
                 $notification = array(
                     'message' => 'Sorry you are approving Maximum value',
@@ -167,6 +168,28 @@ class InvoiceController extends Controller
                 return redirect()->back()->with($notification);
             }
         }
+
+        $invoice = Invoice::FindOrFail($id);
+        $invoice->updated_by = Auth::user()->id;
+        $invoice->status = '1';
+
+        DB::transaction(function() use($request,$invoice,$id){
+            foreach($request->selling_qty as $key => $val){
+                $invoice_details = InvoiceDetail::where('id',$key)->first();
+                $product = Product::where('id',$invoice_details->product_id)->first();
+
+                $product->quantity = ((float)$product->quantity) - ((float)$request->selling_qty[$key]);
+                $product->save();
+            }
+
+            $invoice->save();
+        });
+
+        $notification = array(
+            'message' => 'Invoice Approved Successfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('invoice.pending')->with($notification);
     }
 
 }
