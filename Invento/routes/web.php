@@ -260,4 +260,8 @@ Route::controller(InvoiceController::class)->group(Function(){
 
     Route::get('/invoice/print/list','PrintInvoiceList')->name('print.invoiceList');
     Route::get('/invoice/print/{id}','PrintInvoice')->name('print.invoice');
+
+    Route::get('/daily/invoice/report','DailyInvoiceReport')->name('daily.invoice.report');
+
+    Route::get('/daily/invoice/pdf','DailyInvoicePdf')->name('daily.invoice.pdf');
 });
