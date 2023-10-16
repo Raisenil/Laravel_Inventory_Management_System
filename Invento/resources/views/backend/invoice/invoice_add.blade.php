@@ -356,8 +356,6 @@
             $('.new_customer').hide();
         }
     });
-
-
 </script>
 
 @endsection

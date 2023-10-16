@@ -14,12 +14,23 @@ use Illuminate\Support\Carbon;
 class StockController extends Controller
 {
     public function StockReport(){
-        $allData = Product::orderBy('supplier_id','asc')->orderBy('supplier_id','asc')->get();
+        $allData = Product::orderBy('supplier_id','asc')->orderBy('category_id','asc')->get();
         return view('backend.stock.stock_report',compact('allData'));
     }
 
     public function StockReportPdf(){
-        $allData = Product::orderBy('supplier_id','asc')->orderBy('supplier_id','asc')->get();
+        $allData = Product::orderBy('supplier_id','asc')->orderBy('category_id','asc')->get();
         return view('backend.pdf.stock_report_pdf',compact('allData'));
+    }
+
+    public function StockSupplierReport(){
+        $suppliers = Supplier::all();
+        $category = Category::all();
+        return view('backend.stock.stock_supplier_report',compact('suppliers','category'));
+    }
+
+    public function SupplierWisePdf(Request $request){
+        $allData = Product::orderBy('supplier_id','asc')->orderBy('category_id','asc')->where('supplier_id',$request->supplier_id)->get();
+        return view('backend.pdf.supplier_wise_report_pdf',compact('allData'));
     }
 }

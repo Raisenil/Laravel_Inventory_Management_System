@@ -79,7 +79,7 @@
 
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="  ri-file-copy-2-fill"></i>
+                                    <i class=" ri-file-copy-2-fill"></i>
                                     <span>Manage Invoice</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
@@ -94,12 +94,12 @@
 
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="  ri-file-copy-2-fill"></i>
+                                    <i class="ri-inbox-archive-fill"></i>
                                     <span>Manage Stock</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
                                     <li><a href="{{ route('stock.report') }}">Stock Report</a></li>
-                                    <li><a href="">Supplier/ Product Wise</a></li>
+                                    <li><a href="{{ route('stock.supplier.report') }}">Supplier/ Product Wise</a></li>
                                 </ul>
                             </li>
 

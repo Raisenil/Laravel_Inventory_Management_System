@@ -272,4 +272,7 @@ Route::controller(InvoiceController::class)->group(Function(){
 Route::controller(StockController::class)->group(Function(){
     Route::get('/stock/report','StockReport')->name('stock.report');
     Route::get('/stock/report/pdf','StockReportPdf')->name('stock.report.pdf');
+
+    Route::get('/stock/supplier/report','StockSupplierReport')->name('stock.supplier.report');
+    Route::get('/Supplier/wise/pdf','SupplierWisePdf')->name('supplier.wise.pdf');
 });
