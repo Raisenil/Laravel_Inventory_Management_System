@@ -257,4 +257,7 @@ Route::controller(InvoiceController::class)->group(Function(){
     Route::get('/delete/invoice/{id}','DeleteInvoice')->name('invoice.delete');
     Route::get('/invoice/approve/{id}','InvoiceApprove')->name('invoice.approve');
     Route::post('/approve/store/{id}','ApprovalStore')->name('approval.store');
+
+    Route::get('/invoice/print/list','PrintInvoiceList')->name('print.invoiceList');
+    Route::get('/invoice/print/{id}','PrintInvoice')->name('print.invoice');
 });

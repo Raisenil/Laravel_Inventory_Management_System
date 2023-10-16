@@ -14,16 +14,16 @@
         <div class="d-flex">
             <!-- LOGO -->
             <div class="navbar-brand-box">
-                <a href="index.html" class="logo logo-dark">
+                <a href="{{ route('dashboard') }}" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="{{ asset('backend/assets/images/logo-sm.png') }}" alt="logo-sm-light" height="45">
+                        <img src="{{ asset('backend/assets/images/logo-dark.svg') }}" alt="logo-sm-light" height="45">
                     </span>
                     <span class="logo-lg">
                         <img src="{{ asset('backend/assets/images/logo-dark.svg') }}" alt="logo-dark" height="70">
                     </span>
                 </a>
 
-                <a href="index.html" class="logo logo-light">
+                <a href="{{ route('dashboard') }}" class="logo logo-light">
                     <span class="logo-sm">
                         <img src="{{ asset('backend/assets/images/logo-light.svg') }}" alt="logo-sm-light" height="45">
                     </span>
