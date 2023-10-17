@@ -164,6 +164,8 @@ Route::controller(ContactController::class)->group(Function(){
 
 // Backend Inventory Management System section-----------------------------------------------------------------------------------------------------------------------
 
+Route::middleware('auth')->group(function(){
+
 // Suppliers All route
 Route::controller(SupplierController::class)->group(Function(){
     Route::get('/supplier/all','SupplierAll')->name('supplier.all');
@@ -237,6 +239,9 @@ Route::controller(PurchaseController::class)->group(Function(){
 
     Route::get('/purchase/pending','PurchasePending')->name('purchase.pending');
     Route::get('/purchase/approve/{id}','PurchaseApprove')->name('purchase.approve');
+
+    Route::get('/daily/purchase/report','DailyPurchaseReport')->name('daily.purchase.report');
+    Route::get('/daily/purchase/pdf','DailyPurchasePdf')->name('daily.purchase.pdf');
 });
 
 
@@ -277,4 +282,6 @@ Route::controller(StockController::class)->group(Function(){
 
     Route::get('/supplier/wise/pdf','SupplierWisePdf')->name('supplier.wise.pdf');
     Route::get('/product/wise/pdf','ProductWisePdf')->name('product.wise.pdf');
+});
+
 });

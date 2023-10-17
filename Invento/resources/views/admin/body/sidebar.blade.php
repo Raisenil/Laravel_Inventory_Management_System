@@ -73,6 +73,7 @@
                                 <ul class="sub-menu" aria-expanded="false">
                                     <li><a href="{{route('purchase.all')}}">All Purchases</a></li>
                                     <li><a href="{{route('purchase.pending')}}">Approval Purchases</a></li>
+                                    <li><a href="{{route('daily.purchase.report')}}">Daily Purchases Report</a></li>
                                 </ul>
                             </li>
 

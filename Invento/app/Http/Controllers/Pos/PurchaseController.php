@@ -17,7 +17,7 @@ class PurchaseController extends Controller
     public function PurchaseAll(){
         $allData = Purchase::orderBy('date','desc')->orderBy('id','desc')->get();
         return view('backend.purchase.purchase_all',compact('allData'));
-    } 
+    }
 
     public function PurchaseAdd(){
         $supplier=Supplier::all();
@@ -64,7 +64,7 @@ class PurchaseController extends Controller
 
     public function DeletePurchase($id){
         Purchase::FindOrFail($id)->delete();
-        
+
         $notification = array(
             'message' => 'Purchase Product Deleted Successfully',
             'alert-type' => 'success'
@@ -93,8 +93,19 @@ class PurchaseController extends Controller
                 'message' => 'Purchase Approved Successfully',
                 'alert-type' => 'success'
             );
-    
+
             return redirect()->route('purchase.all')->with($notification);
         }
+    }
+
+    public function DailyPurchaseReport(){
+        return view('backend.purchase.daily_purchase_report');
+    }
+
+    public function DailyPurchasePdf(Request $request){
+        $start_date = date('Y-m-d',strtotime($request->start_date));
+        $end_date = date('Y-m-d',strtotime($request->end_date));
+        $allData = Purchase::whereBetween('date',[$start_date,$end_date])->where('status','1')->get();
+        return view('backend.pdf.daily_purchase_report_pdf',compact('allData','start_date','end_date'));
     }
 }
