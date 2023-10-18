@@ -166,122 +166,124 @@ Route::controller(ContactController::class)->group(Function(){
 
 Route::middleware('auth')->group(function(){
 
-// Suppliers All route
-Route::controller(SupplierController::class)->group(Function(){
-    Route::get('/supplier/all','SupplierAll')->name('supplier.all');
-    Route::get('/supplier/add','SupplierAdd')->name('supplier.add');
-    Route::post('/supplier/store','SupplierStore')->name('supplier.store');
+    // Suppliers All route
+    Route::controller(SupplierController::class)->group(Function(){
+        Route::get('/supplier/all','SupplierAll')->name('supplier.all');
+        Route::get('/supplier/add','SupplierAdd')->name('supplier.add');
+        Route::post('/supplier/store','SupplierStore')->name('supplier.store');
 
-    Route::get('/supplier/edit/{id}','SupplierEdit')->name('supplier.edit');
-    Route::post('/supplier/update','SupplierUpdate')->name('supplier.update');
+        Route::get('/supplier/edit/{id}','SupplierEdit')->name('supplier.edit');
+        Route::post('/supplier/update','SupplierUpdate')->name('supplier.update');
 
-    Route::get('/delete/supplier/{id}','DeleteSupplier')->name('supplier.delete');
-});
-
-
-//Customers All route
-Route::controller(CustomerController::class)->group(Function(){
-    Route::get('/customer/all','CustomerAll')->name('customer.all');
-    Route::get('/customer/add','CustomerAdd')->name('customer.add');
-    Route::post('/customer/store','CustomerStore')->name('customer.store');
-
-    Route::get('/customer/edit/{id}','CustomerEdit')->name('customer.edit');
-    Route::post('/customer/update','CustomerUpdate')->name('customer.update');
-
-    Route::get('/delete/customer/{id}','DeleteCustomer')->name('customer.delete');
-});
+        Route::get('/delete/supplier/{id}','DeleteSupplier')->name('supplier.delete');
+    });
 
 
-// Unit All route
-Route::controller(UnitController::class)->group(Function(){
-    Route::get('/unit/all','UnitAll')->name('unit.all');
-    Route::get('/unit/add','UnitAdd')->name('unit.add');
-    Route::post('/unit/store','UnitStore')->name('unit.store');
+    //Customers All route
+    Route::controller(CustomerController::class)->group(Function(){
+        Route::get('/customer/all','CustomerAll')->name('customer.all');
+        Route::get('/customer/add','CustomerAdd')->name('customer.add');
+        Route::post('/customer/store','CustomerStore')->name('customer.store');
 
-    Route::get('/unit/edit/{id}','UnitEdit')->name('unit.edit');
-    Route::post('/unit/update','unitUpdate')->name('unit.update');
+        Route::get('/customer/edit/{id}','CustomerEdit')->name('customer.edit');
+        Route::post('/customer/update','CustomerUpdate')->name('customer.update');
 
-    Route::get('/delete/unit/{id}','DeleteUnit')->name('unit.delete');
-});
+        Route::get('/delete/customer/{id}','DeleteCustomer')->name('customer.delete');
 
-// Category All route
-Route::controller(CategoryController::class)->group(Function(){
-    Route::get('/category/all','CategoryAll')->name('category.all');
-    Route::get('/category/add','CategoryAdd')->name('category.add');
-    Route::post('/category/store','CategoryStore')->name('category.store');
-
-    Route::get('/category/edit/{id}','CategoryEdit')->name('category.edit');
-    Route::post('/category/update','CategoryUpdate')->name('category.update');
-
-    Route::get('/delete/category/{id}','DeleteCategory')->name('category.delete');
-});
-
-// Products All route
-Route::controller(ProductController::class)->group(Function(){
-    Route::get('/product/all','ProductAll')->name('product.all');
-    Route::get('/product/add','ProductAdd')->name('product.add');
-    Route::post('/product/store','ProductStore')->name('product.store');
-
-    Route::get('/product/edit/{id}','ProductEdit')->name('product.edit');
-    Route::post('/product/update','ProductUpdate')->name('product.update');
-
-    Route::get('/delete/product/{id}','DeleteProduct')->name('product.delete');
-});
+        Route::get('/credit/customer/','CreditCustomer')->name('credit.customer');
+    });
 
 
-// Purchase All route
-Route::controller(PurchaseController::class)->group(Function(){
-    Route::get('/purchase/all','PurchaseAll')->name('purchase.all');
-    Route::get('/purchase/add','PurchaseAdd')->name('purchase.add');
-    Route::post('/purchase/store','PurchaseStore')->name('purchase.store');
+    // Unit All route
+    Route::controller(UnitController::class)->group(Function(){
+        Route::get('/unit/all','UnitAll')->name('unit.all');
+        Route::get('/unit/add','UnitAdd')->name('unit.add');
+        Route::post('/unit/store','UnitStore')->name('unit.store');
 
-    Route::get('/delete/purchase/{id}','DeletePurchase')->name('purchase.delete');
+        Route::get('/unit/edit/{id}','UnitEdit')->name('unit.edit');
+        Route::post('/unit/update','unitUpdate')->name('unit.update');
 
-    Route::get('/purchase/pending','PurchasePending')->name('purchase.pending');
-    Route::get('/purchase/approve/{id}','PurchaseApprove')->name('purchase.approve');
+        Route::get('/delete/unit/{id}','DeleteUnit')->name('unit.delete');
+    });
 
-    Route::get('/daily/purchase/report','DailyPurchaseReport')->name('daily.purchase.report');
-    Route::get('/daily/purchase/pdf','DailyPurchasePdf')->name('daily.purchase.pdf');
-});
+    // Category All route
+    Route::controller(CategoryController::class)->group(Function(){
+        Route::get('/category/all','CategoryAll')->name('category.all');
+        Route::get('/category/add','CategoryAdd')->name('category.add');
+        Route::post('/category/store','CategoryStore')->name('category.store');
 
+        Route::get('/category/edit/{id}','CategoryEdit')->name('category.edit');
+        Route::post('/category/update','CategoryUpdate')->name('category.update');
 
-// Default All route
-Route::controller(DefaultController::class)->group(Function(){
-    Route::get('/get-category','GetCategory')->name('get-category');
-    Route::get('/get-product','GetProduct')->name('get-product');
-    Route::get('/check-product-stock','GetStock')->name('check-product-stock');
-});
+        Route::get('/delete/category/{id}','DeleteCategory')->name('category.delete');
+    });
 
+    // Products All route
+    Route::controller(ProductController::class)->group(Function(){
+        Route::get('/product/all','ProductAll')->name('product.all');
+        Route::get('/product/add','ProductAdd')->name('product.add');
+        Route::post('/product/store','ProductStore')->name('product.store');
 
-// Invoice All route
-Route::controller(InvoiceController::class)->group(Function(){
-    Route::get('/invoice/all','InvoiceAll')->name('invoice.all');
-    Route::get('/invoice/add','InvoiceAdd')->name('invoice.add');
-    Route::post('/invoice/store','InvoiceStore')->name('invoice.store');
+        Route::get('/product/edit/{id}','ProductEdit')->name('product.edit');
+        Route::post('/product/update','ProductUpdate')->name('product.update');
 
-    Route::get('/invoice/pending/list','PendingList')->name('invoice.pending');
-    Route::get('/delete/invoice/{id}','DeleteInvoice')->name('invoice.delete');
-    Route::get('/invoice/approve/{id}','InvoiceApprove')->name('invoice.approve');
-    Route::post('/approve/store/{id}','ApprovalStore')->name('approval.store');
-
-    Route::get('/invoice/print/list','PrintInvoiceList')->name('print.invoiceList');
-    Route::get('/invoice/print/{id}','PrintInvoice')->name('print.invoice');
-
-    Route::get('/daily/invoice/report','DailyInvoiceReport')->name('daily.invoice.report');
-
-    Route::get('/daily/invoice/pdf','DailyInvoicePdf')->name('daily.invoice.pdf');
-});
+        Route::get('/delete/product/{id}','DeleteProduct')->name('product.delete');
+    });
 
 
-// Stock All route
-Route::controller(StockController::class)->group(Function(){
-    Route::get('/stock/report','StockReport')->name('stock.report');
-    Route::get('/stock/report/pdf','StockReportPdf')->name('stock.report.pdf');
+    // Purchase All route
+    Route::controller(PurchaseController::class)->group(Function(){
+        Route::get('/purchase/all','PurchaseAll')->name('purchase.all');
+        Route::get('/purchase/add','PurchaseAdd')->name('purchase.add');
+        Route::post('/purchase/store','PurchaseStore')->name('purchase.store');
 
-    Route::get('/stock/supplier/report','StockSupplierReport')->name('stock.supplier.report');
+        Route::get('/delete/purchase/{id}','DeletePurchase')->name('purchase.delete');
 
-    Route::get('/supplier/wise/pdf','SupplierWisePdf')->name('supplier.wise.pdf');
-    Route::get('/product/wise/pdf','ProductWisePdf')->name('product.wise.pdf');
-});
+        Route::get('/purchase/pending','PurchasePending')->name('purchase.pending');
+        Route::get('/purchase/approve/{id}','PurchaseApprove')->name('purchase.approve');
+
+        Route::get('/daily/purchase/report','DailyPurchaseReport')->name('daily.purchase.report');
+        Route::get('/daily/purchase/pdf','DailyPurchasePdf')->name('daily.purchase.pdf');
+    });
+
+
+    // Default All route
+    Route::controller(DefaultController::class)->group(Function(){
+        Route::get('/get-category','GetCategory')->name('get-category');
+        Route::get('/get-product','GetProduct')->name('get-product');
+        Route::get('/check-product-stock','GetStock')->name('check-product-stock');
+    });
+
+
+    // Invoice All route
+    Route::controller(InvoiceController::class)->group(Function(){
+        Route::get('/invoice/all','InvoiceAll')->name('invoice.all');
+        Route::get('/invoice/add','InvoiceAdd')->name('invoice.add');
+        Route::post('/invoice/store','InvoiceStore')->name('invoice.store');
+
+        Route::get('/invoice/pending/list','PendingList')->name('invoice.pending');
+        Route::get('/delete/invoice/{id}','DeleteInvoice')->name('invoice.delete');
+        Route::get('/invoice/approve/{id}','InvoiceApprove')->name('invoice.approve');
+        Route::post('/approve/store/{id}','ApprovalStore')->name('approval.store');
+
+        Route::get('/invoice/print/list','PrintInvoiceList')->name('print.invoiceList');
+        Route::get('/invoice/print/{id}','PrintInvoice')->name('print.invoice');
+
+        Route::get('/daily/invoice/report','DailyInvoiceReport')->name('daily.invoice.report');
+
+        Route::get('/daily/invoice/pdf','DailyInvoicePdf')->name('daily.invoice.pdf');
+    });
+
+
+    // Stock All route
+    Route::controller(StockController::class)->group(Function(){
+        Route::get('/stock/report','StockReport')->name('stock.report');
+        Route::get('/stock/report/pdf','StockReportPdf')->name('stock.report.pdf');
+
+        Route::get('/stock/supplier/report','StockSupplierReport')->name('stock.supplier.report');
+
+        Route::get('/supplier/wise/pdf','SupplierWisePdf')->name('supplier.wise.pdf');
+        Route::get('/product/wise/pdf','ProductWisePdf')->name('product.wise.pdf');
+    });
 
 });
