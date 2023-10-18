@@ -65,8 +65,5 @@ class CategoryController extends Controller
 
         return redirect()->back()->with($notification);
     }
-
-    public function CreditCustomer(){
-        
-    }
+    
 }

@@ -191,6 +191,7 @@ Route::middleware('auth')->group(function(){
         Route::get('/delete/customer/{id}','DeleteCustomer')->name('customer.delete');
 
         Route::get('/credit/customer/','CreditCustomer')->name('credit.customer');
+        Route::get('/credit/customer/pdf/','CreditCustomerPdf')->name('credit.customer.pdf');
     });
 
 
