@@ -1,5 +1,5 @@
 {{ asset('backend/') }}
 <form method="post" action="{{ route('update.blog.category',$blogcategory->id) }}" >
 
-1.change active status of navbar in frontend
-2.how to make website go to login page if the user id is null
+Sweet alert is on MultiImage Last Part 005
+Toaster is on Admin Panel Custom theme 014
