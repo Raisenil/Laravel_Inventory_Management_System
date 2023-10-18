@@ -117,4 +117,9 @@ class CustomerController extends Controller
         $allData = Payment::whereIn('paid_status',['full_due','partial_paid'])->get();
         return view('backend.pdf.customer_credit_pdf',compact('allData'));
     }
+
+    public function CustomerEditInvoice($invoice_id){
+        $payment = Payment::where('invoice_id',$invoice_id)->first();
+        return view('backend.customer.edit_customer_invoice',compact('payment'));
+    }
 }

@@ -192,6 +192,8 @@ Route::middleware('auth')->group(function(){
 
         Route::get('/credit/customer/','CreditCustomer')->name('credit.customer');
         Route::get('/credit/customer/pdf/','CreditCustomerPdf')->name('credit.customer.pdf');
+
+        Route::get('customer/edit/invoice/{invoice_id}','CustomerEditInvoice')->name('customer.edit.invoice');
     });
 
 

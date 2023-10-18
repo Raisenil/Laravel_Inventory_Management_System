@@ -1,5 +1,9 @@
 {{ asset('backend/') }}
 <form method="post" action="{{ route('update.blog.category',$blogcategory->id) }}" >
 
-Sweet alert is on MultiImage Last Part 005
-Toaster is on Admin Panel Custom theme 014
+Sweet alert - (Multi Image Setup) - 005
+Toaster - (Admin Panel Setup With Custom Theme) - 014
+Image intervention - (Backend Home Page Slider Setup) - 003
+Form Validation in[Laravel Controller] - (Project Portfolio Setup) - 002
+Form Validation Using [JS]- (Project Setting Setup) - 003
+Select 2 - (Manage Invoice Setup) - 001

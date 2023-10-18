@@ -57,7 +57,7 @@
                                 <li class="title">Tag:</li>
                                 <li class="tags-list">
                                     <!-- <a href="#">{{$blogs->blog_tags}}</a> -->
-                                    
+
                                     @foreach (explode(',', $blogs->blog_tags) as $tag)
                                     <a href="#">{{ trim($tag) }}</a>
                                     @endforeach
@@ -81,7 +81,7 @@
                                         <h4 class="title">Previous Post</h4>
                                         <div class="blog__next__prev__post">
                                             <div class="blog__next__prev__thumb">
-                                                <a href="blog-details.html"><img src="assets/img/blog/blog_prev.jpg" alt=""></a>
+                                                {{-- <a href="blog-details.html"><img src="assets/img/blog/blog_prev.jpg" alt=""></a> --}}
                                             </div>
                                             <div class="blog__next__prev__content">
                                                 <h5 class="title"><a href="blog-details.html">Digital Marketing Agency Pricing Guide.</a></h5>
@@ -94,7 +94,7 @@
                                         <h4 class="title">Next Post</h4>
                                         <div class="blog__next__prev__post">
                                             <div class="blog__next__prev__thumb">
-                                                <a href="blog-details.html"><img src="assets/img/blog/blog_next.jpg" alt=""></a>
+                                                {{-- <a href="blog-details.html"><img src="assets/img/blog/blog_next.jpg" alt=""></a> --}}
                                             </div>
                                             <div class="blog__next__prev__content">
                                                 <h5 class="title"><a href="blog-details.html">App Prototyping
@@ -112,7 +112,7 @@
                             <ul class="comment__list">
                                 <li class="comment__item">
                                     <div class="comment__thumb">
-                                        <img src="assets/img/blog/comment_thumb01.png" alt="">
+                                        {{-- <img src="assets/img/blog/comment_thumb01.png" alt=""> --}}
                                     </div>
                                     <div class="comment__content">
                                         <div class="comment__avatar__info">
@@ -127,7 +127,7 @@
                                 </li>
                                 <li class="comment__item children">
                                     <div class="comment__thumb">
-                                        <img src="assets/img/blog/comment_thumb02.png" alt="">
+                                        {{-- <img src="assets/img/blog/comment_thumb02.png" alt=""> --}}
                                     </div>
                                     <div class="comment__content">
                                         <div class="comment__avatar__info">
@@ -142,7 +142,7 @@
                                 </li>
                                 <li class="comment__item">
                                     <div class="comment__thumb">
-                                        <img src="assets/img/blog/comment_thumb03.png" alt="">
+                                        {{-- <img src="assets/img/blog/comment_thumb03.png" alt=""> --}}
                                     </div>
                                     <div class="comment__content">
                                         <div class="comment__avatar__info">
@@ -157,7 +157,7 @@
                                 </li>
                                 <li class="comment__item children">
                                     <div class="comment__thumb">
-                                        <img src="assets/img/blog/comment_thumb04.png" alt="">
+                                        {{-- <img src="assets/img/blog/comment_thumb04.png" alt=""> --}}
                                     </div>
                                     <div class="comment__content">
                                         <div class="comment__avatar__info">
