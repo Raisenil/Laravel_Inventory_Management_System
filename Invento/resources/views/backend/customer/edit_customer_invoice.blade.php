@@ -1,6 +1,8 @@
 @extends('admin.admin_master')
 @section('admin')
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <div class="page-content">
     <div class="container-fluid">
 
@@ -50,12 +52,13 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div> <!-- end row -->
 
                         <div class="row">
                             <div class="col-12">
+                                <form action="{{ route('customer.update.invoice',$payment->invoice_id) }}" method="post">
+                                @csrf
                                 <div>
                                     <div class="p-2">
                                         <h3 class="font-size-16"><strong>Item Invoice</strong></h3>
@@ -139,6 +142,7 @@
                                                     <td class="no-line"></td>
                                                     <td class="no-line text-center">
                                                         <strong>Due Amount</strong></td>
+                                                        <input type="hidden" name="new_paid_amount" value="{{ $payment->due_amount }}">
                                                     <td class="no-line text-end">${{ $payment->due_amount }}</td>
                                                 </tr>
                                                 <tr>
@@ -155,12 +159,41 @@
                                             </table>
                                         </div>
 
+                                        <div class="row">
+                                            <div class="form-group col-md-3">
+                                                <label> Paid Status </label>
+                                                <select name="paid_status" id="paid_status" class="form-select">
+                                                    <option value="">Select Status </option>
+                                                    <option value="full_paid">Full Paid </option>
+                                                    <option value="partial_paid">Partial Paid </option>
+                                                </select>
+                                                <input type="text" name="paid_amount" class="form-control paid_amount" placeholder="Enter Paid Amount" style="display:none;">
+                                            </div>
+
+                                            <div class="form-group col-md-3">
+                                                <div class="md-3">
+                                                    @php
+                                                        date_default_timezone_set('Asia/Dhaka');
+                                                        $date = date('Y-m-d');
+                                                    @endphp
+                                                    <label for="example-text-input" class="form-label">Date</label>
+                                                    <input class="form-control example-date-input" value="{{ $date }}" name="date" type="date"  id="date">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group col-md-3">
+                                                <div class="md-3" style="padding-top:30px;">
+                                                    <button type="submit" class="btn btn-info">Invoice update</button>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                     </div>
                                 </div>
-
+                                </form>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div> <!-- end col -->
@@ -168,5 +201,17 @@
 
     </div> <!-- container-fluid -->
 </div>
+
+<script type="text/javascript">
+    // Paid amount For Partial Pay
+    $(document).on('change','#paid_status', function(){
+        var paid_status = $(this).val();
+        if (paid_status == 'partial_paid') {
+            $('.paid_amount').show();
+        }else{
+            $('.paid_amount').hide();
+        }
+    });
+</script>
 
 @endsection
