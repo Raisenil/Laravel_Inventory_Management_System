@@ -203,6 +203,8 @@ Route::middleware('auth')->group(function(){
 
         Route::get('customer/wise/report','CustomerWiseReport')->name('customer.wise.report');
 
+        Route::get('customer/wise/credit/report','CustomerWiseCreditReport')->name('customer.wise.credit.report');
+
     });
 
 
