@@ -55,7 +55,7 @@
 
                         {{-- Customer Paid Wise --}}
                         <div class="show_paid" style="display:none">
-                            <form method="get" action="{{ route('supplier.wise.pdf') }}" id="myForm" target="_black">
+                            <form method="get" action="{{ route('customer.wise.paid.report') }}" id="myForm" target="_black">
                                 <div class="row">
                                     <div class="col-sm-8 form-group">
                                         <label>Customer Name </label>
