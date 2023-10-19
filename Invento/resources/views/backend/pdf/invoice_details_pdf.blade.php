@@ -1,8 +1,6 @@
 @extends('admin.admin_master')
 @section('admin')
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
 <div class="page-content">
     <div class="container-fluid">
 
@@ -10,7 +8,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Customer Invoice</h4>
+                    <h4 class="mb-sm-0">Customer Payment Report</h4>
 
                 </div>
             </div>
@@ -22,14 +20,38 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <a href="{{route('credit.customer')}}" class="btn btn-secondary waves-effect waves-light" style="float:right;"><i class="fas fa-angle-left"></i> Back</a>
-
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="invoice-title">
+                                    <h4 class="float-end font-size-16"><strong>Invoice No # {{ $payment['invoice']['invoice_no'] }}</strong></h4>
+                                    <h3>
+                                        <img src="{{ asset('backend/assets/images/logo-dark.svg') }}" alt="logo" height="100"/>
+                                    </h3>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <address>
+                                            <strong>Invento.</strong><br>
+                                            Michelina Lock, Christianstad<br>
+                                            support@invento.com
+                                        </address>
+                                    </div>
+                                    <div class="col-6 mt-4 text-end">
+                                        <address>
+                                            <strong>Invoice Date:</strong><br>
+                                            {{ date('d-m-Y',strtotime($payment['invoice']['date'])) }}<br><br>
+                                        </address>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="row">
                             <div class="col-12">
                                 <div>
                                     <div class="p-2">
-                                        <h3 class="font-size-16"><strong>Customer Invoice (Invoice No :#{{ $payment->invoice_id }})</strong></h3>
+                                        <h3 class="font-size-16"><strong>Customer Invoice</strong></h3>
                                     </div>
                                     <div class="">
                                         <div class="table-responsive">
@@ -39,6 +61,7 @@
                                                     <td><strong>Customer Name</strong></td>
                                                     <td class="text-center"><strong>Customer Mobile</strong></td>
                                                     <td class="text-center"><strong>Email</strong>
+                                                    </td>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -52,13 +75,12 @@
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div> <!-- end row -->
 
                         <div class="row">
                             <div class="col-12">
-                                <form action="{{ route('customer.update.invoice',$payment->invoice_id) }}" method="post">
-                                @csrf
                                 <div>
                                     <div class="p-2">
                                         <h3 class="font-size-16"><strong>Item Invoice</strong></h3>
@@ -142,7 +164,6 @@
                                                     <td class="no-line"></td>
                                                     <td class="no-line text-center">
                                                         <strong>Due Amount</strong></td>
-                                                        <input type="hidden" name="new_paid_amount" value="{{ $payment->due_amount }}">
                                                     <td class="no-line text-end">${{ $payment->due_amount }}</td>
                                                 </tr>
                                                 <tr>
@@ -155,45 +176,40 @@
                                                         <strong>Grand Amount</strong></td>
                                                     <td class="no-line text-end"><h4 class="m-0">${{ $payment->total_amount }}</h4></td>
                                                 </tr>
+
+                                                <tr>
+                                                    <td colspan="7" style="text-align: center;font-weight:bold;">Paid Summary</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td colspan="4" style="text-align: center;font-weight:bold;">Date</td>
+                                                    <td colspan="3" style="text-align: center;font-weight:bold;">Amount</td>
+                                                </tr>
+
+                                                @php
+                                                $payment_details = App\Models\PaymentDetail::where('invoice_id',$payment->invoice_id)->get();
+                                                @endphp
+
+                                                @foreach($payment_details as $item)
+                                                <tr>
+                                                    <td colspan="4" style="text-align: center;font-weight:bold;">{{ date('d-m-Y',strtotime($item->date)) }}</td>
+                                                    <td colspan="3" style="text-align: center;font-weight:bold;">{{ $item->current_paid_amount }}</td>
+                                                </tr>
+                                                @endforeach
                                                 </tbody>
                                             </table>
                                         </div>
 
-                                        <div class="row">
-                                            <div class="form-group col-md-3">
-                                                <label> Paid Status </label>
-                                                <select name="paid_status" id="paid_status" class="form-select">
-                                                    <option value="">Select Status </option>
-                                                    <option value="full_paid">Full Paid </option>
-                                                    <option value="partial_paid">Partial Paid </option>
-                                                </select>
-                                                <input type="text" name="paid_amount" class="form-control paid_amount" placeholder="Enter Paid Amount" style="display:none;">
-                                            </div>
-
-                                            <div class="form-group col-md-3">
-                                                <div class="md-3">
-                                                    @php
-                                                        date_default_timezone_set('Asia/Dhaka');
-                                                        $date = date('Y-m-d');
-                                                    @endphp
-                                                    <label for="example-text-input" class="form-label">Date</label>
-                                                    <input class="form-control example-date-input" value="{{ $date }}" name="date" type="date"  id="date">
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group col-md-3">
-                                                <div class="md-3" style="padding-top:30px;">
-                                                    <button type="submit" class="btn btn-info">Invoice update</button>
-                                                </div>
+                                        <div class="d-print-none">
+                                            <div class="float-end">
+                                                <a href="javascript:window.print()" class="btn btn-success waves-effect waves-light"><i class="fa fa-print"></i></a>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
-                                </form>
+
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div> <!-- end col -->
@@ -201,17 +217,5 @@
 
     </div> <!-- container-fluid -->
 </div>
-
-<script type="text/javascript">
-    // Paid amount For Partial Pay
-    $(document).on('change','#paid_status', function(){
-        var paid_status = $(this).val();
-        if (paid_status == 'partial_paid') {
-            $('.paid_amount').show();
-        }else{
-            $('.paid_amount').hide();
-        }
-    });
-</script>
 
 @endsection
