@@ -1,5 +1,6 @@
 {{ asset('backend/') }}
 <form method="post" action="{{ route('update.blog.category',$blogcategory->id) }}" >
+mailtrap for Mail
 
 Sweet alert - (Multi Image Setup) - 005
 Toaster - (Admin Panel Setup With Custom Theme) - 014
