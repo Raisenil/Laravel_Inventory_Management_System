@@ -9,8 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
-    public function destroy(Request $request)
-    {
+    public function destroy(Request $request){
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
@@ -23,19 +22,19 @@ class AdminController extends Controller
         );
 
         return redirect('/login')->with($notification);
-    } // End Method 
+    } // End Method
 
     public function Profile(){
         $id = Auth::user()->id;
         $adminData = User::find($id);
         return view('admin.admin_profile_view',compact('adminData'));
-    } 
+    }
 
     public function EditProfile(){
         $id = Auth::user()->id;
         $editData = User::find($id);
         return view('admin.admin_profile_edit',compact('editData'));
-    } //End Method 
+    } //End Method
 
     public function StoreProfile(Request $request){
         $id = Auth::user()->id;
@@ -59,17 +58,17 @@ class AdminController extends Controller
         );
 
         return redirect()->route('admin.profile')->with($notification);
-    } //End Method 
+    } //End Method
 
     public function ChangePassword(){
         return view('admin.admin_change_password');
-    }//End Method 
+    }//End Method
 
     public function UpdatePassword(Request $request){
         $validateData = $request->validate([
-            'oldpassword' => 'required', 
-            'newpassword' => 'required', 
-            'confirm_password' => 'required|same:newpassword', 
+            'oldpassword' => 'required',
+            'newpassword' => 'required',
+            'confirm_password' => 'required|same:newpassword',
         ]);
 
         $hashedPassword = Auth::user()->password;
@@ -80,12 +79,12 @@ class AdminController extends Controller
             $users->save();
 
             session()->flash('message','Password Updated Successfully');
-            
+
             return redirect()->back();
         }else{
             session()->flash('message','Old Password does not match');
-            
+
             return redirect()->back();
         }
-    }//End Method 
+    }//End Method
 }

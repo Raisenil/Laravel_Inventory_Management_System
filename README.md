@@ -143,3 +143,7 @@ By default, it will run on `http://localhost:8000`.
 
 9\. Access Your Laravel Project:
 Open a web browser and navigate to `http://localhost:8000` (or the URL provided when starting the server).
+
+## Additional Documents
+
+[Reports](Inventory_Management_System_Documentation.pdf)
