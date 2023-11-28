@@ -37,6 +37,15 @@ class PurchaseController extends Controller
         }else{
             $count_category = count($request->category_id);
             for($i=0;$i<$count_category;$i++){
+                if($request->buying_qty[$i]==null && $request->unit_price[$i]==null){
+                    $notification = array(
+                        'message' => 'Null value detected',
+                        'alert-type' => 'error'
+                    );
+
+                    return redirect()->back()->with($notification);
+                }else{
+
                 $purchase = new Purchase();
                 $purchase->date = date('Y-m-d',strtotime($request->date[$i]));
                 $purchase->purchase_no = $request->purchase_no[$i];
@@ -52,6 +61,8 @@ class PurchaseController extends Controller
                 $purchase->created_at = Carbon::now();
 
                 $purchase->save();
+
+                }
             }
 
             $notification = array(

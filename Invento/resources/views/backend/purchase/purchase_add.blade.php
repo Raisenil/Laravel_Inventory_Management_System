@@ -162,11 +162,11 @@
         </td>
 
         <td>
-            <input type="number" min="1" class="from-control buying_qty text-right" name="buying_qty[]" value="">
+            <input type="number" min="1" class="from-control buying_qty text-right" name="buying_qty[]" value="" required>
         </td>
 
         <td>
-            <input type="number" class="from-control unit_price text-right" name="unit_price[]" value="">
+            <input type="number" class="from-control unit_price text-right" name="unit_price[]" value="" required>
         </td>
 
         <td>
@@ -183,6 +183,7 @@
     </tr>
 
 </script>
+
 
 <script type="text/javascript">
     $(document).ready(function(){

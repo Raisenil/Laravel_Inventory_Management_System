@@ -70,6 +70,16 @@ class InvoiceController extends Controller
                     if($invoice->save()){
                         $count_category = count($request->category_id);
                         for($i=0;$i<$count_category;$i++){
+
+                            if($request->selling_qty[$i]==null && $request->unit_price[$i]==null){
+                                $notification = array(
+                                    'message' => 'Null value detected',
+                                    'alert-type' => 'error'
+                                );
+
+                                return redirect()->back()->with($notification);
+                            }else{
+
                             $invoice_details = new InvoiceDetail();
                             $invoice_details->date = date('Y-m-d',strtotime($request->date));
                             $invoice_details->invoice_id = $invoice->id;
@@ -80,6 +90,7 @@ class InvoiceController extends Controller
                             $invoice_details->selling_price = $request->selling_price[$i];
                             $invoice_details->status = '0';
                             $invoice_details->save();
+                            }
                         }
 
                         if($request->customer_id == '0'){
@@ -178,7 +189,7 @@ class InvoiceController extends Controller
                 $invoice_details = InvoiceDetail::where('id',$key)->first();
                 $invoice_details->status = '1';
                 $invoice_details->save();
-                
+
                 $product = Product::where('id',$invoice_details->product_id)->first();
 
                 $product->quantity = ((float)$product->quantity) - ((float)$request->selling_qty[$key]);

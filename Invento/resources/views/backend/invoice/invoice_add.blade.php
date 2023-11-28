@@ -191,11 +191,11 @@
         </td>
 
         <td>
-            <input type="number" min="1" class="form-control selling_qty text-right" name="selling_qty[]" value="">
+            <input type="number" min="1" class="form-control selling_qty text-right" name="selling_qty[]" value="" required>
         </td>
 
         <td>
-            <input type="number" class="form-control unit_price text-right" name="unit_price[]" value="">
+            <input type="number" class="form-control unit_price text-right" name="unit_price[]" value="" required>
         </td>
 
         <td>
