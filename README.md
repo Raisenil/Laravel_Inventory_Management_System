@@ -125,9 +125,7 @@ Enter name as `invento` and choose the appropriate collation (usually utf8_gener
 
 6\. Update Configuration from `invento\.env`
 
-7\. Access the website in your browser at `http://localhost:3000`.
-
-8\. Run the Development Server:
+7\. Run the Development Server:
 Use Laravel's built-in development server to run your project locally. Start the server with the following command in terminal:
 
     cd Invento
@@ -135,7 +133,7 @@ Use Laravel's built-in development server to run your project locally. Start the
 
 By default, it will run on `http://localhost:8000`.
 
-9\. Access Your Laravel Project:
+8\. Access Your Laravel Project:
 Open a web browser and navigate to `http://localhost:8000` (or the URL provided when starting the server).
 
 ## Additional Documents
