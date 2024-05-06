@@ -110,7 +110,7 @@ Set up a contact form to facilitate communication with your clients through your
 
 ## 11. Installation and Setup
 
-To set up the Food Ordering website on your local machine, follow these steps:
+To set up the Invento. on your local machine, follow these steps:
 
 1\. Clone the repository from GitHub: `git clone https://github.com/Raisenil/Laravel_Inventory_Management_System.git`
 
