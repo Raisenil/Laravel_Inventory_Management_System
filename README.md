@@ -50,9 +50,7 @@ The Inventory Management System offers a wide range of features, including:
 
 - **Reports**: Generate various reports, including daily invoice reports, working stock reports, supplier-wise stock reports, and customer credit/paid reports.
 
-- **Dynamic Website**: Develop a dynamic website for your company.
-
-- **Theming**: Customize the system's appearance with professional themes.
+- **Theming**: Customized the system's appearance with professional themes.
 
 - **Contact Form Setup**: Enable contact forms on your website for communication with clients.
 
@@ -61,10 +59,6 @@ The Inventory Management System offers a wide range of features, including:
 - **Image Upload System**: Allows multiple image uploads for products.
 
 - **Basic Fundamentals**: Covers essential Laravel concepts.
-
-- **Blog Management**: Implement an blog for your website.
-
-- **Custom Pagination**: Enhance the user experience with custom pagination.
 
 ## 4. Technology Stack
 
@@ -82,7 +76,7 @@ The Inventory Management System is built using the following technologies:
 
 ## 5. Getting Started
 
-Before diving into the details, make sure you have Laravel 10 installed and have a basic understanding of PHP, MySQL, HTML, CSS, and JavaScript. Clone the project repository and follow the setup instructions provided in the course materials.
+To Properly Run it on local system make sure Laravel 10 installed and have a basic understanding of PHP, MySQL, HTML, CSS, and JavaScript. Clone the project repository and follow the setup instructions as provided.
 
 ## 6. User Roles and Authentication
 
