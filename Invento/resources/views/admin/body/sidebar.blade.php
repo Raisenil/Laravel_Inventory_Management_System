@@ -110,7 +110,7 @@
 
 
                             <!-- Page Layout Start -->
-                            <li class="menu-title">Pages</li>
+                            {{-- <li class="menu-title">Pages</li>
 
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -186,7 +186,7 @@
                                 <ul class="sub-menu" aria-expanded="false">
                                     <li><a href="{{route('contact.message')}}">Contact Message</a></li>
                                 </ul>
-                            </li>
+                            </li> --}}
                             <!-- Page Layout End -->
 
 
