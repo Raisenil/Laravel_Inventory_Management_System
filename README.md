@@ -58,8 +58,6 @@ The Inventory Management System offers a wide range of features, including:
 
 - **Image Upload System**: Allows multiple image uploads for products.
 
-- **Basic Fundamentals**: Covers essential Laravel concepts.
-
 ## 4. Technology Stack
 
 The Inventory Management System is built using the following technologies:
