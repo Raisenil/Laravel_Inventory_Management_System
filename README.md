@@ -66,27 +66,27 @@ The Inventory Management System is built using the following technologies:
 
 - **Theming**: Professional themes for frontend and backend customization.
 
-## 5. Getting Started
-
-To Properly Run it on local system make sure Laravel 10 installed and have a basic understanding of PHP, MySQL, HTML, CSS, and JavaScript. Clone the project repository and follow the setup instructions as provided.
-
-## 6. User Roles and Authentication
+## 5. User Roles and Authentication
 
 The system includes user roles and authentication features. Users can register, log in, and access different sections of the application based on their roles.
 
-## 7. Managing Inventory
+## 6. Managing Inventory
 
-### 7.1. Purchase Management
+### 6.1. Purchase Management
 
 This feature allows you to record and manage product purchases.
 
-### 7.2. Invoice Management
+### 6.2. Invoice Management
 
 Create, manage, and generate invoices for your customers.
 
-### 7.3. Reports
+### 6.3. Reports
 
 Generate various reports, including daily invoice reports, working stock reports, supplier-wise stock reports, and customer credit/paid reports.
+
+## 7. Getting Started
+
+To Properly Run it on local system make sure Laravel 10 installed. Clone the project repository and follow the setup instructions as provided.
 
 ## 8. Installation and Setup
 
