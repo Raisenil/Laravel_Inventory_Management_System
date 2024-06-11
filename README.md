@@ -22,13 +22,7 @@
 
     - 7.3. **Reports**
 
-8\. **Dynamic Website**
-
-9\. **Customization and Theming**
-
-10\. **Contact Form Setup**
-
-11\. **Installation and Setup**
+8\. **Installation and Setup**
 
 ---
 
@@ -94,19 +88,7 @@ Create, manage, and generate invoices for your customers.
 
 Generate various reports, including daily invoice reports, working stock reports, supplier-wise stock reports, and customer credit/paid reports.
 
-## 8. Dynamic Website
-
-Learn to create a dynamic website for your company using the Laravel framework.
-
-## 9. Customization and Theming
-
-Customize the appearance of your application by adding professional themes to both the frontend and backend.
-
-## 10. Contact Form Setup
-
-Set up a contact form to facilitate communication with your clients through your website.
-
-## 11. Installation and Setup
+## 8. Installation and Setup
 
 To set up the Invento. on your local machine, follow these steps:
 
