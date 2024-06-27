@@ -138,4 +138,4 @@ Open a web browser and navigate to `http://localhost:8000` (or the URL provided 
 
 ## Additional Documents
 
-[Reports](Inventory_Management_System_Documentation.pdf)
+[Reports](Doc/Inventory_Management_System_Documentation.pdf)
