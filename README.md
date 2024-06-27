@@ -22,13 +22,7 @@
 
     - 7.3. **Reports**
 
-8\. **Dynamic Website**
-
-9\. **Customization and Theming**
-
-10\. **Contact Form Setup**
-
-11\. **Installation and Setup**
+8\. **Installation and Setup**
 
 ---
 
@@ -58,8 +52,6 @@ The Inventory Management System offers a wide range of features, including:
 
 - **Image Upload System**: Allows multiple image uploads for products.
 
-- **Basic Fundamentals**: Covers essential Laravel concepts.
-
 ## 4. Technology Stack
 
 The Inventory Management System is built using the following technologies:
@@ -74,41 +66,29 @@ The Inventory Management System is built using the following technologies:
 
 - **Theming**: Professional themes for frontend and backend customization.
 
-## 5. Getting Started
-
-To Properly Run it on local system make sure Laravel 10 installed and have a basic understanding of PHP, MySQL, HTML, CSS, and JavaScript. Clone the project repository and follow the setup instructions as provided.
-
-## 6. User Roles and Authentication
+## 5. User Roles and Authentication
 
 The system includes user roles and authentication features. Users can register, log in, and access different sections of the application based on their roles.
 
-## 7. Managing Inventory
+## 6. Managing Inventory
 
-### 7.1. Purchase Management
+### 6.1. Purchase Management
 
 This feature allows you to record and manage product purchases.
 
-### 7.2. Invoice Management
+### 6.2. Invoice Management
 
 Create, manage, and generate invoices for your customers.
 
-### 7.3. Reports
+### 6.3. Reports
 
 Generate various reports, including daily invoice reports, working stock reports, supplier-wise stock reports, and customer credit/paid reports.
 
-## 8. Dynamic Website
+## 7. Getting Started
 
-Learn to create a dynamic website for your company using the Laravel framework.
+To Properly Run it on local system make sure Laravel 10 installed. Clone the project repository and follow the setup instructions as provided.
 
-## 9. Customization and Theming
-
-Customize the appearance of your application by adding professional themes to both the frontend and backend.
-
-## 10. Contact Form Setup
-
-Set up a contact form to facilitate communication with your clients through your website.
-
-## 11. Installation and Setup
+## 8. Installation and Setup
 
 To set up the Invento. on your local machine, follow these steps:
 
@@ -138,4 +118,4 @@ Open a web browser and navigate to `http://localhost:8000` (or the URL provided 
 
 ## Additional Documents
 
-[Reports](Doc/Inventory_Management_System_Documentation.pdf)
+[Reports](DOC/Inventory_Management_System_Documentation.pdf)
